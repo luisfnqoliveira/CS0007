@@ -73,7 +73,7 @@ If you have another book on Java, you are probably fine.
 
 ## Exams
 
-There will be three exams: one mid-term and one final exam. The final exam, by the nature of this course, is comprehensive. The tentative exam dates are listed on the schedule. Exams are closed book and an individual effort.
+There will be two exams: one mid-term and one final exam. The final exam, by the nature of this course, is comprehensive. The tentative exam dates are listed on the schedule. Exams are closed book and an individual effort.
 
 Specific instructions for each exam will be posted at a closer date.
 
