@@ -19,9 +19,9 @@ This course is an ideal candidate to give CS majors in Computer Science the requ
 ## Course objectives
 
 On completion you should have gained the skills to:
-1- Think computer: Understand common programming grammar (usage and limitations)
-2- Read computer: Analyse and critique Java code written by someone else
-3- Speak computer: Write algorithms and implement them (in Java)
+1. Think computer: Understand common programming grammar (usage and limitations)
+2. Read computer: Analyse and critique Java code written by someone else
+3. Speak computer: Write algorithms and implement them (in Java)
 
 ## Schedule
 
