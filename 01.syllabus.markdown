@@ -115,7 +115,7 @@ Cheating/plagiarism will not be tolerated. Students suspected of violating the U
 
 ## Late/Early Policy
 
-Students need to submit assessed assignments by the published deadline. The penalty for late assignments is 10% per day. However, each student will receive 5 late days for the course. These late days are provided to allow you to cope with most emergencies that prevent completing a lab on time, including computer problems, a cold, getting stuck at the airport, etc. The following rules will be applied for late days:
+Students need to submit assessed assignments by the published deadline. The penalty for late assignments is 10% per day. However, each student will receive 5 late days for the course. These late days are provided to allow you to cope with most emergencies that prevent completing an assignment on time, including computer problems, a cold, getting stuck at the airport, etc. The following rules will be applied for late days:
 - Late days are used automatically until you run out.
 - No more than 2 late days can be used on any one assignment.
 - If your last submission is one day late, and you have at least one remaining late day, then you will receive full credit for the lab and automatically spend one late day. For example, if an assignment is due at 11:59pm on Thursday and your last submission is noon on Friday, then you will receive full credit and spend one late day.
