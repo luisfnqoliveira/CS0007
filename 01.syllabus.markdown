@@ -1,0 +1,153 @@
+---
+layout: page
+title: Syllabus
+permalink: /syllabus/
+---
+
+# CS 0007: Introduction to computer programming with Java #
+{: style="text-align: center"}
+# Summer 2020 #
+{: style="text-align: center"}
+
+## Description
+This is an introductory course on programming. As you start, you don't need to have any prior knowledge of any programming, but you should have high-school level algebra knowledge.
+The focus of this course will be on gaining new skills that allow students to analyse problems, plan algorithms, and write programs that solve those problems.
+As an introductory course, you are expected to become proficient at programming. The focus will be on Java, but most of the skills are transferable to a plethora of other High-level Programming Languages.
+
+This course is an ideal candidate to give CS majors in Computer Science the required background for CS 0401. Nonetheless, due to the widespread usage of computer programs to solve problems in virtually every field of study, this course may be of interest for students very diverse fields of study (from physics and chemistry, to humanities and social sciences).
+
+## Course objectives
+
+On completion you should have gained the skills to:
+1- Think computer: Understand common programming grammar (usage and limitations)
+2- Read computer: Analyse and critique Java code written by someone else
+3- Speak computer: Write algorithms and implement them (in Java)
+
+## Schedule
+
+Go [here]({{site.baseurl}}/schedule) for the tentative schedule and lecture materials.
+
+## Grades ##
+
+(This is still in development, and may change until the first week of classes)
+The course includes exams, labs, and programming projects. The grade distribution is:
+
+* Quizzes: 	10%
+* Labs: 	20%
+* Programming projects: 	30%
+* Exam (higher): 	25%
+* Exam (lower): 	15%
+
+You may ask to have your work regraded. However, the entire work will be regraded. This may or may not result in a grade change, either up or down. To have an assignment regraded, you must hand in the item with a typewritten paragraph explaining what was not graded correctly, referencing any materials that support your claim (e.g. book page, slide number). You must ask for the regrading within 1 week after the assignment was returned. There will be no exceptions to this requirement.
+
+# Grading Scale #
+
+|97%+|A+
+|93-96%|A
+|90-92%|A-
+|87-89%|B+
+|83-86%|B
+|80-82%|B-
+|77-79%|C+
+|73-76%|C
+|70-72%|C-
+|67-69%|D+
+|63-66%|D
+|60-62%|D-
+|<60%|F
+
+
+
+
+## Textbook
+
+
+Starting Out with Java - From Control Structures through Objects 7th edition, Tony Gaddis
+
+You were automatically opted-in for Redshelf access via Canvas. You have the option to opt-out until add/drop (check academic calendar).
+
+A book is advised for this introductory course, if you have a (recent?) previous edition you are probably fine.
+If you have another book on Java, you are probably fine.
+
+
+
+## Exams
+
+There will be three exams: one mid-term and one final exam. The final exam, by the nature of this course, is comprehensive. The tentative exam dates are listed on the schedule. Exams are closed book and an individual effort.
+
+Specific instructions for each exam will be posted at a closer date.
+
+## Projects
+
+There will be three projects for this course.
+The projects will be graded on a rubric and partial credit will be rewarded based on the rubric and the overall requirements of the project.
+
+Solutions will not be provided for any project.
+
+You are responsible for attending lectures and recitations in order to receive any guidance or hints given generally to the class (even if they do not get posted)
+
+TAs and myself will be available during posted office hours (and by request, otherwise) to provide assistance.
+
+## Attendance
+
+You should come to class! Attending classes will increase your chances for a higher grade!
+You are responsible for all material presented in lecture.
+If you must miss a class, you should ask your classmates for course notes.
+The instructor will not provide course notes.
+
+## Collaboration
+
+Generally speaking, as part of the overall university policy and culture, collaboration is **not allowed** in any form or any project or exam, unless otherwise noted.
+
+This includes the sharing of materials, past materials, materials from other sections of this class. The only exception is if **you** wrote the material (because you are repeating the class).
+
+Any use of material that is not your own constitutes as collaboration, which informally is considered cheating, and is then a violation of this policy.
+Cheating will earn you a 0 on the assignment/exam on the first offence. You will **fail the course** on the second offence.
+
+If you have any doubts about what is "cheating", ask the instructor for clarification before you do it. The instructor will make the final determination of what is considered cheating.
+
+You are generally allowed to talk about projects and share insight (and you should!) You cannot write any part of another student's assignment or review another student's assignment.
+
+## Conduct Policy
+
+# Cheating and plagiarism
+Cheating/plagiarism will not be tolerated. Students suspected of violating the University of Pittsburgh Policy on Academic Integrity, from the February 1974 Senate Committee on Tenure and Academic Freedom reported to the Senate Council, will be required to participate in the outlined procedural process as initiated by the instructor. A minimum sanction of a zero score for the quiz or exam will be imposed. View the complete policy at http://www.cfo.pitt.edu/policies/policy/02/02-03-02.html.
+
+## Late/Early Policy
+
+Students need to submit assessed assignments by the published deadline. The penalty for late assignments is 10% per day. However, each student will receive 5 late days for the course. These late days are provided to allow you to cope with most emergencies that prevent completing a lab on time, including computer problems, a cold, getting stuck at the airport, etc. The following rules will be applied for late days:
+- Late days are used automatically until you run out.
+- No more than 2 late days can be used on any one assignment.
+- If your last submission is one day late, and you have at least one remaining late day, then you will receive full credit for the lab and automatically spend one late day. For example, if an assignment is due at 11:59pm on Thursday and your last submission is noon on Friday, then you will receive full credit and spend one late day.
+- Once you have used all your late days, or exhausted the limit for the assignment in question, then you will receive a penalty of 10% for each subsequent late day. For example, suppose you have only one late day left. If an assignment is due at 11:59pm on Thursday and your last submission is noon on Saturday, then you will spend your one remaining late day and be penalized 10%. If your last submission is noon on Sunday, then you will spend one late day and be penalized 30%.
+- Late submissions will not be accepted after three days after the due date.
+
+It is worth noting that those late days to help you manage your time in the face of personal issues and to help smooth out burstiness in assignment due dates across classes. They are for when you are sick, when a short term emergency situation arises, when you have too many deadlines all at once, etc. It is strongly recommended that you don't waste these credits when you don't need them.
+
+You are expected to plan your time well including contingency time. For example, if you expect a piece of work to take two days, you should begin it more than two days before its deadline. Please DO NOT ask the course lecturer for an extension. Except for serious persistent personal issues, you should not anticipate additional deadline leniency. If you have a serious persistent personal issue, such as being hospitalized for an extended period or needing to leave the country for a family matter, please talk to your academic advisor as soon as possible. You should always inform your academic advisor of any circumstance that seriously affects your work. This will be clarified succinctly in the immediately following notes.
+
+* **Illness and other compelling reasons**: A late assignment (exam or project) with a valid excuse according to University rules, such as an extended illness or hospitalization, will be accepted up to one week late without a penalty. Arrangements must be made in advance when possible; written documentation of the compelling reason must be provided.
+
+* There will be no early exams. Make up exams must be pre-approved. No make up exams will be given that do not meet University rules and have proper (written) documentation.
+
+* All make up work (exams, projects) must be completed within one week of the original assignment.
+
+* Under extraordinary circumstances, such as an extended multi-week illness, other accommodations can be made for the course and this policy can be amended to permit some flexibility for completing the missed work.
+
+## Notes for Students
+
+# Record keeping
+All graded materials that a student receives back should be saved in a safe place until after the term has ended and he/she has received and accepts his/her final grade. In this way, any grade discrepancies can be easily resolved.
+
+# Disabilities #
+If you have a disability for which you are or may be requesting an accommodation, you are encouraged to contact the [Office of Disability Resources and Services](https://www.studentaffairs.pitt.edu/drs/) (DRS), 140 William Pitt Union (412-648-7890) (TTY 412-383-7355), drsrecep@pitt.edu, as soon as possible in the term. They will verify your disability and determine reasonable accommodations for this course.
+
+
+# File Backups #
+It is your responsibility to backup your work regularly. Please consider using reliable and multiple ways to protect your files! **I.e.: Please make backups, and backups of your backups, and...** (you get the point!)
+The University offers space that you can use for backups through Box, if you like. Both Google Drive and Dropbox have free tiers that also work well. No extensions for assignments will be approved due to failed laptops, hard drive crashes, lost USB drives, or other calamities that lead to lost or corrupted data. Per the policy on voluntary late assignments, you may turn in a project up to five days late (with a penalty), which should give sufficient time to recover a lost/corrupted project.
+
+## Acknowledgements
+
+* David Wilkinson: Provided the skeleton for the website
+* [Jekyll](https://jekyllrb.com): Software that creates this static 'blog' style site.

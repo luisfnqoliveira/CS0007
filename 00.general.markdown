@@ -1,0 +1,39 @@
+---
+layout: page
+title:  "General Info"
+date:   2018-08-23 23:40:00 -0000
+categories: info
+permalink: /general
+---
+
+
+## Lectures ##
+Class No. 18888 (CS 0007): Monday & Wednesday, 12:30 - 14:15, in a Zoom meeting room near you :D
+
+## Recitations ##
+You **can** attend any recitation. No room size problems!
+But there is still only 1 TA, so double check with the TA to make sure it's ok!
+
+# Class No. 18888 (CS 0007) #
+
+- Friday 9:00 -  9:50
+  - TA: Yue Dai
+- Friday 10:00 - 10:50
+  - TA: Yue Dai
+
+## Important Links ##
+ * [Instructor]({{site.baseurl}}/aboutme)
+ * [Syllabus]({{site.baseurl}}/syllabus)
+ * [Schedule]({{site.baseurl}}/schedule)
+
+## Teaching Assistants ##
+**As a first choice, please try to attend only the office hours of the TA for your recitation. This will balance the work load among the TAs and provide you with less waiting for help. Thank you.**
+
+
+# Class No. 18888 (CS 0007) #
+
+Yue Dai
+  * Office hours - ???
+    - Time: ???
+    - Time: ???
+  * Contact: yud42

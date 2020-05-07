@@ -1,0 +1,45 @@
+---
+layout: page
+title:  "Schedule"
+permalink: /schedule
+---
+
+
+
+
+
+
+
+**This schedule is tentative and likely to change!**
+{: style="color: #F00"}
+
+As always, keep up with the [University Academic Calendar][university-calendar] for general important university dates.
+
+Check these links for the **Office Hours** of the [instructor]({{site.baseurl}}/aboutme) and [TAs]({{site.baseurl}}/general).
+
+|Date          | Topic                                                           |
+|--------------+-----------------------------------------------------------------|{% for lecture in site.data.lectures %}
+| {{lecture.date}}  | {{lecture.title}} |
+||{%- assign slides = "" |split: "" -%}
+  {%- for slide in lecture.slides -%}
+    {%- assign slideContent = '[' | append: slide[0] | append: '](' | append: site.baseurl | append: slide[1] | append: ')' | split: "thiscanotexist_F00D" -%}
+    {%- assign slides = slides | concat: slideContent -%}
+  {%- endfor -%}
+  {%- if slides.size>0  -%}
+    slides ({{slides | join: ", "}})
+  {%- endif -%}
+  {%- assign examples = "" |split: "" -%}
+  {%- for example in lecture.examples -%}
+    {%- assign exampleContent = '[' | append: example[0] | append: '](' | append: site.baseurl | append: example[1] | append: ')' | split: "thiscanotexist_F00D" -%}
+    {%- assign examples = examples | concat: exampleContent -%}
+  {%- endfor -%}
+  {%- if examples.size>0 and slides.size>0 -%}
+  &nbsp;\|&nbsp;
+  {%- endif -%}
+  {{examples | join: " \| "}}
+{%- endfor %}
+
+
+
+
+[university-calendar]: https://www.registrar.pitt.edu/calendars

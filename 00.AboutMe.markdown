@@ -1,0 +1,31 @@
+---
+layout: page
+title:  "Luis Oliveira"
+date:   2018-08-23 23:40:00 -0000
+categories: info
+permalink: /aboutme
+---
+
+## Contact Info ##
+
+**The TA(s) is your first source of information, I ask that you first contact
+your TA with questions. If the TA cannot answer the question, then please
+contact me.**
+
+I'm nicer than I look (I promise!)
+
+# E-mail #
+[loliveira@pitt.edu](mailto:loliveira@pitt.edu)
+
+Please set the subject as follows: [CS 0007] - <univ e-mail id> - <subject>
+
+E.g. [CS 0007] - lun8 - This is the correct subject line!
+
+# Office #
+5421 Sennott Square.
+
+# Office hours #
+- **Slack**: Just ask your questions there! (Ask me to add you, if I haven't yet)
+- **TBD**
+
+Appointments are also available: https://luisfnqoliveira.youcanbook.me/

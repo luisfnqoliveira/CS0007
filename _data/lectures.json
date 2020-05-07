@@ -1,0 +1,73 @@
+[
+  {
+    "title": "Introduction",
+    "slides": {
+    },
+    "examples": {
+      "Syllabus": "/syllabus"
+    }
+  },
+  {
+    "title": "Input... Processing... and Output",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Conditionals",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Functions",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Loops",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Files",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Error handling",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Collections",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Object-oriented programming",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "A new programming language TBD O.o",
+    "slides": {
+    },
+    "examples": {
+    }
+  }
+]
