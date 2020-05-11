@@ -1,10 +1,23 @@
 [
   {
-    "title": "Introduction",
+    "title": "Syllabus",
+    "date": "May 11",
     "slides": {
+      "pdf": "/slides/00_CS0007_Syllabus.pdf",
+      "pptx": "/slides/00_CS0007_Syllabus.pptx"
     },
     "examples": {
       "Syllabus": "/syllabus"
+    }
+  },
+  {
+    "title": "Introduction",
+    "date": "May 11",
+    "slides": {
+      "pdf": "/slides/01_CS0007_Introduction.pdf",
+      "pptx": "/slides/01_CS0007_Introduction.pptx"
+    },
+    "examples": {
     }
   },
   {
