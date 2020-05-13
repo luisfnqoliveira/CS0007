@@ -21,6 +21,16 @@
     }
   },
   {
+    "title": "About Programming",
+    "date": "May 13",
+    "slides": {
+      "pdf": "/slides/02_CS0007_Programming.pdf",
+      "pptx": "/slides/02_CS0007_Programming.pptx"
+    },
+    "examples": {
+    }
+  },
+  {
     "title": "Input... Processing... and Output",
     "slides": {
     },
