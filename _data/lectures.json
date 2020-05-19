@@ -35,6 +35,7 @@
     "slides": {
     },
     "examples": {
+      "Hello World": "/code_snippets/Hello.java"
     }
   },
   {

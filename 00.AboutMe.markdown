@@ -26,6 +26,8 @@ E.g. [CS 0007] - lun8 - This is the correct subject line!
 
 # Office hours #
 - **Slack**: Just ask your questions there! (Ask me to add you, if I haven't yet)
-- **TBD**
+- **Tuesdays and Thursdays**
+    - 10-11am
+    - 2-3pm
 
 Appointments are also available: https://luisfnqoliveira.youcanbook.me/
