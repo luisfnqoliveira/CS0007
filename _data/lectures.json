@@ -32,10 +32,18 @@
   },
   {
     "title": "Input... Processing... and Output",
+    "date": "May 21 and 28",
     "slides": {
+      "pdf": "/slides/03_CS0007_Finally_JAVA-Fundamentals.pdf",
+      "pptx": "/slides/03_CS0007_Finally_JAVA-Fundamentals.pptx"
     },
     "examples": {
-      "Hello World": "/code_snippets/Hello.java"
+      "Hello World": "/code_snippets/Hello.java",
+      "Hello?": "/code_snippets/Fundamentals/Hello.java",
+      "Types": "/code_snippets/Fundamentals/Types.java",
+      "Operators": "/code_snippets/Fundamentals/Operators.java",
+      "Precedence": "/code_snippets/Fundamentals/Precedence.java",
+      "Casts": "/code_snippets/Fundamentals/Casts.java"
     }
   },
   {
