@@ -56,6 +56,7 @@ class RandomNumbers
 Note how the last bit of code simply manipulates mathematically the output of our RNG. We generate a random real number and store it in a double variable: `randomDouble`. By design the RNG generates a uniform distribution of numbers between 0.0 and 1.0 exclusively. This means that all numbers are equally likely and within that range. Using some clever mathematics we can shift the range (subtracting 0.25 means that numbers are now within the range -0.25 and 0.75), or expand the range (multiplying by a number).
 
 ### Your turn
+
 {:.question}
 | 1. Write a program that generates two `double` random numbers between -1.0 and 1.0. Store the random number in `double` variables named `xCoordinate`, and `yCoordinate`. Run your program multiple times to verify that it is actually correct. |
 
