@@ -27,7 +27,12 @@ import java.util.*; // <-- Needed for Random (The RNG class)
 
 Then, we can generate random numbers in our program `\o/`.
 
+The Random class is able to generate different types of random numbers. And depending on the type of data that you want to use, you will need to call different functions that return that correct type of data.
+Check the program below for an example of using Java's RNG.
+
 ```Java
+import java.io.*;
+import java.util.*;
 
 class RandomNumbers
 {
@@ -53,7 +58,13 @@ class RandomNumbers
 }
 ```
 
-Note how the last bit of code simply manipulates mathematically the output of our RNG. We generate a random real number and store it in a double variable: `randomDouble`. By design the RNG generates a uniform distribution of numbers between 0.0 and 1.0 exclusively. This means that all numbers are equally likely and within that range. Using some clever mathematics we can shift the range (subtracting 0.25 means that numbers are now within the range -0.25 and 0.75), or expand the range (multiplying by a number).
+If you need an integer random number, you need to use the `nextInt()` method. This method returns a random integer number between -2147483648 and 2147483647. The maximum range storable in a variable of type `int`.
+
+Alternatively you can give it an argument (the number between parentheses: 42) to limit the range of random numbers. In the example 42 limits the generation of random numbers to the interval from 0 to 42 (exclusive). Exclusive means that the maximum number returned by `nextInt(42)` is 41!
+
+For doubles, you need to use the method `nextDouble`, this method, by default, generates numbers between 0.0 and 1.0 (exclusive once again). But generate different ranges of numbers is not too complicated, despite requiring a bit of thought :).
+
+This is done in the last bit of code, where a simple mathematical manipulation changes the range of the output of our RNG. There we first generate a random `double` number and store it in a double variable: `randomDouble`. By design the RNG generates a uniform distribution of numbers between 0.0 and 1.0. This means that all numbers are equally likely and within that range. Using some clever mathematics we can shift the range (subtracting 0.25 means that numbers are now within the range -0.25 and 0.75), and expand the range (multiplying by 10.0 thus forcing our random number to be in the -2.5 to 7.5 range).
 
 ### Your turn
 
