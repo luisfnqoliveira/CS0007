@@ -1,0 +1,116 @@
+---
+layout: lab
+title: Lab 1
+subtitle: Recipies - Part 1
+summary: |
+  This lab is the first part of Project 1 - Calculating Pi using a computer simulation
+released: 11:59 PM Sunday, May 31st, 2020.
+due: Monday, June 1st, 2020 by the end of recitation.
+---
+
+This lab is Part 1 for the [first project]({{site.baseurl}}/projects/01). [**If you haven't, please read the project description first!**]({{site.baseurl}}/projects/01)
+
+Your assignment for this lab is to solve these exercises and show them working to your TA by the end of the recitation.
+
+In the first part of the project, you will implement a small program that will ask the user what is the size of the rectangle that the user wants to use for the experiment, and generate a random point within that rectangle.
+
+## Random numbers
+
+So, we will first look at how we can get a random number. Java provides us with lots of useful classes and a lot of code already implemented. One of them, is the Random Number Generator (RNG).
+
+The RNG, however, is not directly accessible in base Java. Like the Scanner class (that we discussed in lecture) in order to use the RNG we must import a library in the top of our code.
+
+```Java
+import java.io.*;   // <-- Needed for Scanner
+import java.util.*; // <-- Needed for Random (The RNG class)
+```
+
+Then, we can generate random numbers in our program `\o/`.
+
+```Java
+
+class RandomNumbers
+{
+    static public void main(String []args)
+    {
+        Random rng = new Random();
+        int randomInt = rng.nextInt(); // Generates a random number between -2147483648 and 2147483647
+        System.out.println(randomInt);
+
+        randomInt = rng.nextInt(42); // Generates a random number between 0 and 42 (exclusive)
+        System.out.println(randomInt);
+
+        double randomDouble = rng.nextDouble(); // Generates a random number between 0.0 and 1.0 (exclusive)
+        System.out.println(randomDouble);
+
+        /* Advanced random numbers */
+        /*   aka random bending! */
+        randomDouble = rng.nextDouble(); // Generates a random number between 0.0 and 1.0 (exclusive)
+        randomDouble = randomDouble - 0.25; // Now it is a random number between -0.25 and 0.75 (exclusive)
+        randomDouble = randomDouble*10.0; // Now it is a random number between -2.5 and 7.5 (exclusive)
+        System.out.println(randomDouble);
+    }
+}
+```
+
+Note how the last bit of code simply manipulates mathematically the output of our RNG. We generate a random real number and store it in a double variable: `randomDouble`. By design the RNG generates a uniform distribution of numbers between 0.0 and 1.0 exclusively. This means that all numbers are equally likely and within that range. Using some clever mathematics we can shift the range (subtracting 0.25 means that numbers are now within the range -0.25 and 0.75), or expand the range (multiplying by a number).
+
+### Your turn
+{:.question}
+| 1. Write a program that generates two `double` random numbers between -1.0 and 1.0. Store the random number in `double` variables named `xCoordinate`, and `yCoordinate`. Run your program multiple times to verify that it is actually correct. |
+
+{:.question}
+| 2. Modify the program to ask the user what is the size of the rectangle the program will be using in the calculation of Pi. Store the user's reply in a `double` variable named size. |
+
+**Tip**: Don't forget the Scanner class we saw in lecture!
+```Java
+  Scanner kbd = new Scanner(System.in);
+  double value = kbd.nextDouble();
+```
+
+{:.question}
+| 3. Modify the program use the user's input in the generation of the `xCoordinate`. E.g. if the user inputs 2, the random numbers should be between -1 and 1; and if the user inputs 1.5 the random numbers should be between -0.75 and 0.75.|
+
+
+
+## Seeds and fake randomness
+
+Computers don't actually generate COMPLETELY random numbers :). Instead they have some code that generates an as-random-as-possible sequence of numbers, we call them pseudo-random (pseudo means `not really`). This is advanced stuff, but you can use it to your advantage to help you check your program. After all, if your numbers are always random, how can you run tests to make sure your changes are working?
+Moreover, if you are a scientist running an experiment involving random numbers and you need to show evidence of your results, it is good practice to know exactly which random numbers you used in your experiment.
+
+To ensure that your sequence of random numbers is always the same, you can use a *seed*. Usually Java seeds your RNG with a random value. That's why every time you run your program, new numbers are displayed.
+But if you define a seed and use it to seed the RNG, well then you reap what you sow! (get the joke? seed... like in crops? :D)
+
+Seeding is easy, just pass the seed as an argument when creating the RNG.
+And if you run the program below, the three random numbers will always be the same!
+```Java
+class RandomNumbers
+{
+    static public void main(String []args)
+    {
+        final int SEED = 42; // This is the seed
+        Random rng = new Random(SEED); // Seed the RNG
+
+        int randomInt = rng.nextInt();
+        System.out.println(randomInt);
+
+        randomInt = rng.nextInt();
+        System.out.println(randomInt);
+
+        randomInt = rng.nextInt();
+        System.out.println(randomInt);
+      }
+}
+```
+
+**Note:** Because the seed doesn't change for the duration of the program, we can (should) make it a constant.
+
+
+### Your turn
+{:.question}
+| 4. Modify your program to have a constant named SEED that can be used to guarantee the same sequence of random numbers is generated. Run your program multiple times to ensure the random numbers are always the same.|
+
+
+# Demo
+
+Once you have finished, show the lab instructor that you have Lab 1 working.
