@@ -119,10 +119,20 @@ class RandomNumbers
 
 
 ### Your turn
+
 {:.question}
 | 4. Modify your program to have a constant named SEED that can be used to guarantee the same sequence of random numbers is generated. Run your program multiple times to ensure the random numbers are always the same.|
 
 
+
 # Demo
+
+Once you have implemented all these steps, this is how the output of your program should look like:
+
+```
+What is the size of the rectangle to be used in the calculation of Pi?
+3.2
+The coordinate of the point is: (0.728203776105178, 0.5863151096315055)
+```
 
 Once you have finished, show the lab instructor that you have Lab 1 working.
