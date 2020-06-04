@@ -81,7 +81,7 @@ This is done in the last bit of code, where a simple mathematical manipulation c
 ```
 
 {:.question}
-| 3. Modify the program use the user's input in the generation of the `xCoordinate`. E.g. if the user inputs 2, the random numbers should be between -1 and 1; and if the user inputs 1.5 the random numbers should be between -0.75 and 0.75.|
+| 3. Modify the program use the user's input in the generation of the `xCoordinate` and `yCoordinate`. E.g. if the user inputs 2, the random numbers should be between -1 and 1; and if the user inputs 1.5 the random numbers should be between -0.75 and 0.75.|
 
 
 
