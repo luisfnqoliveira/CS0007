@@ -47,10 +47,22 @@
     }
   },
   {
+    "date": "June 1 and 28",
     "title": "Conditionals",
     "slides": {
+      "pdf": "/slides/04_CS0007_Decisions.pdf",
+      "pptx": "/slides/04_CS0007_Decisions.pptx"
+
     },
     "examples": {
+      "If": "/code_snippets/decisions/If.java",
+      "IfElse": "/code_snippets/decisions/IfElse.java",
+      "MultipleChoice": "/code_snippets/decisions/MultipleChoice.java",
+      "BetterChoices": "/code_snippets/decisions/BetterChoices.java",
+      "CompareStrings": "/code_snippets/decisions/CompareStrings.java",
+      "Stamps": "/code_snippets/decisions/Stamps.java",
+      "Scopes": "/code_snippets/decisions/Scopes.java"
+
     }
   },
   {
