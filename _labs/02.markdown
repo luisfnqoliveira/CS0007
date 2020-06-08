@@ -26,8 +26,8 @@ Well, it's easy, don't you remember from high school? 😏 Ok, review time!
 
 ### How do we define a circumference?
 
-A circumference is a geometric curve where the distance of every point that belongs to it, is at the same to a reference (the centre of the circumference).
-So, if you have a circumference centred in `(0, 0)` (like we have for our simulation) the equation of the circumference is:
+A circumference is a geometric curve where the distance of every point to its centre is the same, and it's equal to the radius of the circumference.
+So, if you have a circumference of radius `r` centred in `(0, 0)` (like we have for our simulation) the equation of the circumference is:
 
 $$\sqrt{x^2+y^2}=r$$
 
