@@ -1,0 +1,204 @@
+---
+layout: lab
+title: Lab 2
+subtitle: Recipies - Part 2
+summary: |
+  This lab is the second part of Project 1 - Calculating Pi using a computer simulation. Today we will focus on using conditionals to decide if a random point falls inside or outside the circle.
+released: 11:59 PM Sunday, June 7th, 2020.
+due: Monday, June 8th, 2020 by the end of recitation.
+---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+This lab is Part 2 for the [first project]({{site.baseurl}}/projects/01), read the project description again if you need to jog your memory.
+
+Your assignment for this lab is to solve these exercises and show them working to your TA by the end of the recitation.
+You don't have to submit anything for this lab. Only the final implementation of the project will be submitted!
+Part 3 of the lab will contain instructions on how to submit your project.
+
+In this lab, you will take your Lab 1 implementation and expand it with some code that allows you to decide if the points you generate fall inside or outside of the circle and the rectangle.
+
+# Part 1
+
+Let's start with the maths. How can you tell if a point `(x, y)` belongs to a circle?
+Well, it's easy, don't you remember from high school? 😏 Ok, review time!
+
+### How do we define a circumference?
+
+A circumference is a geometric curve where the distance of every point that belongs to it, is at the same to a reference (the centre of the circumference).
+So, if you have a circumference centred in `(0, 0)` (like we have for our simulation) the equation of the circumference is:
+
+$$\sqrt{x^2+y^2}=r$$
+
+Or equivalently (after we square both sides of the equation):
+
+$$x^2+y^2=r^2$$
+
+Easy! Right?
+
+In fact, the equation says that point `(x, y)` is part of the circumference if its distance to `(0, 0)` - calculated as $$\sqrt{x^2+y^2}$$ - equals the radius of the circumference $$r$$.
+
+It is slightly trickier if the circle is not centred in `(0, 0)` that's why I asked you to generate the points around the coordinate `(0, 0)`. :)
+
+### How do we define a circle?
+A circle is both the circumference and all points inside it.
+
+So, if you have a circle centred in `(0, 0)` (like we have for our simulation) a point that belongs to that circle, must be at a distance from the centre that is no larger than the circumference:
+
+$$x^2+y^2<=r^2$$
+
+
+In other words *wink, wink*:
+
+{:.question}
+|Given the point `(x, y)` and the circle centred in `(0, 0)` of radius `r`. <br> The point is inside the circle if and only if $$x^2+y^2<=r^2$$. <br> Else, the point is outside of the circle.|
+
+
+### How to calculate x to the power of 2 in Java?
+
+Great question! Java has a lot of useful mathematical functions ready for us to use.
+One of the is the `pow` function! And if we want to do something like raising 2 to the power of 10, we simply need to write:
+
+```Java
+double power = Math.pow(2.0, 10.0);
+```
+
+Or square a number:
+
+```Java
+double r = 3.0;
+double power = Math.pow(r, 2.0);
+```
+
+### Conditionals
+
+In order to make our program behave differently based on values we calculate, or based on user input, we need to use conditionals.
+One of the most widespread conditionals (all programming languages that I've used have them!) is the if-then-else statement. That we saw in lecture last week!
+In case you don't remember, this is what it looks like:
+
+```Java
+boolean condition;
+if(condition)
+{
+  System.out.println("The condition is true");
+}
+else
+{
+  System.out.println("The condition is false");
+}
+System.out.println("This always runs");
+```
+
+
+### Your turn
+
+To estimate the value of $$\pi$$, we need to be able to generate multiple random points, count them, and do some calculations.
+So, towards that purpose, lets make some modifications to the code we created for the previous lab.
+
+{:.question}
+| 1. Start by creating 2 variables named `total` and `count` in your Lab 1 program. You will use these variables to keep track of how many points you have generated, and how many were inside the circle. |
+
+{:.question}
+| 2. Modify your program to check if the point `(xCoordinate, yCoordinate)` is within a circle centred in `(0, 0)` and with radius `size/2`. Where `size` is the length of the square input by the user. Make your program output a message stating if the point is within the circle or not |
+
+**Example output using the seed number 1:**
+```
+What is the size of the rectangle to be used in the calculation of Pi?
+3.2
+The coordinate of the point is: (0.728203776105178, 0.5863151096315055)
+(0.728203776105178, 0.5863151096315055) is inside the circle of radius 1.6
+```
+
+{:.question}
+| 2. Modify your program to generate 10 points. Try copy-pasting the code you have to generate a random point and checking if it is inside the circle 9 times.|
+
+**Warning:** Copy-pasting is a powerful technique to quickly replicate code we wrote before, but be careful: With great power... come great mistakes.
+Usually:
+- Declaring variable multiple times
+- Copy-pasting code that we did not intend.
+- Copy-pasting code that needs small changes, that we forget!
+- (joke!) What you just did! ;)
+
+**Example output using the seed number 1:**
+```
+What is the size of the rectangle to be used in the calculation of Pi?
+3.2
+The coordinate of the point is: (0.7388102102505307, -0.28774140322495473)
+(0.7388102102505307, -0.28774140322495473) is inside the circle of radius 1.6
+The coordinate of the point is: (-0.9353125078089054, -0.5353054209295642)
+(-0.9353125078089054, -0.5353054209295642) is inside the circle of radius 1.6
+The coordinate of the point is: (1.4968189101571863, -1.580425016749564)
+(1.4968189101571863, -1.580425016749564) is outside the circle of radius 1.6
+The coordinate of the point is: (1.4838553504742646, 1.4075692441021115)
+(1.4838553504742646, 1.4075692441021115) is outside the circle of radius 1.6
+The coordinate of the point is: (1.4310237365222205, 1.398662876467103)
+(1.4310237365222205, 1.398662876467103) is outside the circle of radius 1.6
+The coordinate of the point is: (-0.3290421050089421, -0.4879423065500472)
+(-0.3290421050089421, -0.4879423065500472) is inside the circle of radius 1.6
+The coordinate of the point is: (-0.6590174975870824, 0.02074760744395228)
+(-0.6590174975870824, 0.02074760744395228) is inside the circle of radius 1.6
+The coordinate of the point is: (-1.2289053182954952, 0.8657148162533688)
+(-1.2289053182954952, 0.8657148162533688) is inside the circle of radius 1.6
+The coordinate of the point is: (0.5116566678189439, -1.0984099501764921)
+(0.5116566678189439, -1.0984099501764921) is inside the circle of radius 1.6
+The coordinate of the point is: (0.5116566678189439, -1.0984099501764921)
+(0.5116566678189439, -1.0984099501764921) is inside the circle of radius 1.6
+```
+
+
+**Think about it:** Do you think it is a good idea to copy-paste your code like this?
+Can you think of any cons of doing this? For example:
+1. What happens if you made a mistake? Now you have to change all 10 copies... And you know you'll forget 1! :)
+2. How many more space does your program take? In a small program like this it's not a huge deal, but what about when you write a really big program?
+3. What if you want the user to decide how many points should be generated?
+4. What if the lab asks you for a change that must be made in every single copy????
+
+
+### About that...
+
+
+{:.question}
+| 3. We need to keep track of how many points fall into the circle and the total number of points... <br> Yikes! <br> Modify your code such that it adds 1 to variable `total` for each point it generates, and that it adds 1 to the variable `count` **if** the point is inside the circle. |
+
+{:.question}
+| 4. Finally, print how many points fell inside the circle, the total of points you generated, and your estimate of $$\pi$$. |
+
+**Example output using the seed number 1:**
+```
+What is the size of the rectangle to be used in the calculation of Pi?
+3.2
+The coordinate of the point is: (0.7388102102505307, -0.28774140322495473)
+(0.7388102102505307, -0.28774140322495473) is inside the circle of radius 1.6
+The coordinate of the point is: (-0.9353125078089054, -0.5353054209295642)
+(-0.9353125078089054, -0.5353054209295642) is inside the circle of radius 1.6
+The coordinate of the point is: (1.4968189101571863, -1.580425016749564)
+(1.4968189101571863, -1.580425016749564) is outside the circle of radius 1.6
+The coordinate of the point is: (1.4838553504742646, 1.4075692441021115)
+(1.4838553504742646, 1.4075692441021115) is outside the circle of radius 1.6
+The coordinate of the point is: (1.4310237365222205, 1.398662876467103)
+(1.4310237365222205, 1.398662876467103) is outside the circle of radius 1.6
+The coordinate of the point is: (-0.3290421050089421, -0.4879423065500472)
+(-0.3290421050089421, -0.4879423065500472) is inside the circle of radius 1.6
+The coordinate of the point is: (-0.6590174975870824, 0.02074760744395228)
+(-0.6590174975870824, 0.02074760744395228) is inside the circle of radius 1.6
+The coordinate of the point is: (-1.2289053182954952, 0.8657148162533688)
+(-1.2289053182954952, 0.8657148162533688) is inside the circle of radius 1.6
+The coordinate of the point is: (0.5116566678189439, -1.0984099501764921)
+(0.5116566678189439, -1.0984099501764921) is inside the circle of radius 1.6
+The coordinate of the point is: (0.5116566678189439, -1.0984099501764921)
+(0.5116566678189439, -1.0984099501764921) is inside the circle of radius 1.6
+7.0 points out of 10.0 are inside the circle.
+The pi estimate is 2.8
+```
+
+**Remember:** The estimate of $$\pi$$ is proportional to the ratio of number of points that fell inside/outside the circle. [**Read the project description**]({{site.baseurl}}/projects/01) for an in-depth explanation.
+
+$$\pi = 4\times\frac{count}{total}$$
+
+
+**Good news:** There are better ways of repeating your code several times! Soon...
+
+# Demo
+
+Once you have finished, show the lab instructor that you have Lab 1 working.
