@@ -3,7 +3,7 @@ layout: lab
 title: Lab 3
 subtitle: Recipies - Part 3
 summary: |
-  This lab is the second part of Project 1 - Calculating pi using a computer simulation. Organizing the code we wrote in previous labs into functions, and generating a user input number of points to calculate pi.
+  This lab is the final part of Project 1 - Calculating pi using a computer simulation. Organizing the code we wrote in previous labs into functions, and generating a user input number of points to calculate pi.
 released: 11:59 PM Sunday, June 14th, 2020.
 due: Check project 1 for deadline.
 ---
