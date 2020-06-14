@@ -1,0 +1,167 @@
+---
+layout: lab
+title: Lab 3
+subtitle: Recipies - Part 3
+summary: |
+  This lab is the second part of Project 1 - Calculating pi using a computer simulation. Organizing the code we wrote in previous labs into functions, and generating a user input number of points to calculate pi.
+released: 11:59 PM Sunday, June 14th, 2020.
+due: Check project 1 for deadline.
+---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+This lab is Part 3 for the [first project]({{site.baseurl}}/projects/01), read the project description again if you need to jog your memory.
+
+Your assignment for this lab is to solve these exercises and show them working to your TA by the end of the recitation.
+
+{:.blinking}
+However!! This time you will need to submit your final project work to be graded! [**Check project 1 description for deadline and submission instructions!**]({{site.baseurl}}/projects/01).
+
+# Here we go!
+Let's start with me giving you some startup code:
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Project1 {
+
+    // Random number generator. We will be using this in a function multiple times.
+    // Let's make our lives easier by declaring it here: we only initialize it once! and can use it everywhere.
+    static final int SEED = 1;
+    static Random rng = new Random(SEED);
+
+    // The size of the rectangle can be 1! We don't need to ask the user.
+    static double size = 1.0;
+
+    /**
+     * This function asks the user for the amount of darts it wants to throw.
+     * @return The user input.
+     */
+    public static int getNumberOfDarts()
+    {
+      // Ask the user how many darts to throw.
+    }
+
+    /**
+     * This function recursively throws darts and checks if they hit a circle of radius "size/2".
+     * This function will recursively call itself to throw multiple darts.
+     * @param count - This single input parameter represents the number of darts to throw
+     * @return This function returns the number of darts that hit the circle.
+     */
+    public static double throwDarts(int count)
+    {
+      // Generate a random point between -1 and 1
+
+      // Recursive case, count > 0:
+      //     1. Call ourselves with "count-1", this will give us the number of hits of the remaining "count-1 darts".
+      //     2. If the dart hits the circle, add 1 to the number of hits (return value of the recursive call).
+      //        Else, return the number of hits (return value of the recursive call).
+
+      // Base case, count == 0:
+      //     1. Return 0, we are no longer throwing darts.
+    }
+
+    static public void main(String []args)
+    {
+        // 1. Ask user for the number of darts to throw
+        // 2. Call function throwDarts passing to it the number of darts that we want to run.
+        // 3. Calculate Pi Using the function return value and the number of darts we threw.
+    }
+
+}
+```
+
+## Now the exercise!
+
+Using your lab 2 implementation, you are going to fill in functions shown above.
+The final program we are going to implement in this journey to calculate $$\pi$$ we will start by asking the user how many darts it wants to throw.
+The program will then throw the darts and print the $$\pi$$ estimate.
+
+
+### Differences from lab 2
+
+In this lab, we will fix the size of the square to 1.0 (this is already in the code above).
+Moreover, because we will be using the random number generator in a function that will be called multiple times, we initialize the variable in the class. This has the benefit that variable `rng` is visible in EVERY function you declare in class `Project1`, and allows us to keep using a seed.
+
+**Think**: What would happen if you declared and initialized variable rng with a seed inside a function that is called multiple times? (try it)
+
+
+### main
+When your program begins, it should ask the user for a number of darts to throw between 1 and 2000. If the result is outside of that range, the program can simply exit.
+Then, the program will run the requested number of dart throws, calculate its estimate of pi and exit.
+
+### throwDarts
+
+To implement a program that will throw multiple darts, you will implement a recursive function named thorwDarts. This function, accepts 1 argument named count. Count indicates the number of darts that should be thrown, thus how many more recursive calls need to be made. And throwDarts returns one single value: the number of darts that hit the circle of radius "size/2".
+
+Function throwDarts should start by checking if more darts need to be thrown (recursive case), or if the experiment is over and no more darts need to be thrown (base case). In both cases, the function should return the number of darts that hit the circle. In the base case the function will return 0, as no more darts are thrown. In the recursive case, the function should generate a random point within a square of size 1.0, and check if the dart is inside the circle of size `1.0/2` (same as in lab 2). If the dart hits the circle, then the function should return the number of hits from the recursive call, +1 for this throw. If the dart misses the circle (i.e., is outside the circle) then the function will only return the number of hits obtained from the recursive call.
+
+### throwDarts
+
+This function ask the user how many darts it wants to throw.
+
+## Your turn
+
+{:.question}
+| 1. Start by implementing function `throwDarts` such that counts down recursively like we did with function countdown in lecture. Test it with a small input, e.g. 10. |
+
+{:.question}
+| 2. Modify function `throwDarts` to have the behaviour described above. Test it with a small number of points, e.g. 10 or 100. |
+
+**Hint**: Implement the base case, then the recursive case. Remember to reuse the code you developed in lab2!
+
+{:.question}
+| 3. Implement your `getNumberOfDarts` function to have the behaviour described above.|
+
+{:.question}
+| 4. Implement your `main` function to call `getNumberOfDarts`, verify if the user input is in the specified range, call throwDarts, and calculate $$\pi$$.|
+
+**Invalid input example output using the seed number 1:**
+```
+How many darts do you want to throw? (1-2000)
+0
+Invalid size.
+```
+
+**Valid input example output using the seed number 1:**
+```
+How many darts do you want to throw? (1-2000)
+1000
+798.0 points out of 1000 are inside the circle.
+The pi estimate is 3.192
+```
+
+# Demo
+
+Once you have finished, show the lab instructor what you did in Lab 3.
+
+# Beyond the lab
+
+Now, until the deadline, make sure everything is working and submit it following the instructions in [the project 1 description]({{site.baseurl}}/projects/01).
+
+## Extra credit
+
+You want more, you say? Well, what about this for extra 5%?
+
+Modify function getNumberOfDarts to ask the user to input a valid number of darts 5 times before returning the input.
+Maybe you can use recursion to do this?
+
+```
+How many darts do you want to throw? (1-2000)
+-1
+The number must be in the interval of 1-2000
+How many darts do you want to throw? (1-2000)
+-10
+The number must be in the interval of 1-2000
+How many darts do you want to throw? (1-2000)
+0
+The number must be in the interval of 1-2000
+How many darts do you want to throw? (1-2000)
+2002
+The number must be in the interval of 1-2000
+How many darts do you want to throw? (1-2000)
+2001
+Invalid size.
+```

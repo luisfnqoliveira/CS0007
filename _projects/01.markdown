@@ -86,10 +86,21 @@ You will be implementing this project in three different labs.
 
 - [Lab 1: 6/1/2020]({{site.baseurl}}/labs/01)
 
-- Lab 2: 6/8/2020
+- [Lab 2: 6/8/2020]({{site.baseurl}}/labs/02)
 
-- Lab 3: 6/15/2020
+- [Lab 3: 6/15/2020]({{site.baseurl}}/labs/03)
 
 # Submission
 
-The final project submission details will be given closer to the deadline
+Submit a single ZIP file with your project named username_proj1.zip (e.g. lun8_proj1.zip). In the zip file, there should be no folder!, just the following files:
+
+1. Your Project1.java file. Put your name and username at the top of the file in comments!
+2. A `readme.txt` file. It should contain:
+
+    - Your name
+    - Your Pitt username
+    - Anything that does not work
+    - If you attempted the extra credit
+    - Anything else you think might help grading your project more easily
+
+Submit into the submissions Box folder I have shared with you. Your Box folder (you have 50GB!) is accessible through http://my.pitt.edu. When you see your file within the shared folder, you know you have uploaded it successfully. If you would like to resubmit, you can copy the file in again. Let me know immediately if there are any problems submitting your work.

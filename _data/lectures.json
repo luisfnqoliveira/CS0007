@@ -47,7 +47,7 @@
     }
   },
   {
-    "date": "June 1 and 28",
+    "date": "June 3 and 8",
     "title": "Conditionals",
     "slides": {
       "pdf": "/slides/04_CS0007_Decisions.pdf",
@@ -70,10 +70,26 @@
     "slides": {
     },
     "examples": {
+      "FunctionsAKAMethods": "/code_snippets/functions/FunctionsAKAMethods.java",
+      "Arguments": "/code_snippets/functions/Arguments.java",
+      "Return": "/code_snippets/functions/Return.java",
+      "Scopes": "/code_snippets/functions/Scopes.java",
+      "OneVariableToRuleThemAll": "/code_snippets/functions/OneVariableToRuleThemAll.java",
+      "Recursion": "/code_snippets/functions/Recursion.java",
+      "InputValidation": "/code_snippets/functions/InputValidation.java"
+
     }
   },
   {
     "title": "Loops",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Midterm",
+    "date": "June 29",
     "slides": {
     },
     "examples": {
