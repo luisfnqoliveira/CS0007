@@ -146,7 +146,11 @@ Now, until the deadline, make sure everything is working and submit it following
 You want more, you say? Well, what about this for extra 5%?
 
 Modify function getNumberOfDarts to ask the user to input a valid number of darts 5 times before returning the input.
-Maybe you can use recursion to do this?
+
+This is: If the user inputs a valid number, just return that number. If the user inputs an invalid number, give it up to 5 chances to correct its input.
+If the user inputs 5 invalid numbers, return the invalid number and don't run the simulation.
+
+Maybe you can use recursion to do this? Or maybe you want to use while loops like we saw in lecture!
 
 ```
 How many darts do you want to throw? (1-2000)
