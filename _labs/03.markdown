@@ -52,7 +52,7 @@ public class Project1 {
      */
     public static double throwDarts(int count)
     {
-      // Generate a random point between -1 and 1
+      // Generate a random point between -0.5 and 0.5
 
       // Recursive case, count > 0:
       //     1. Call ourselves with "count-1", this will give us the number of hits of the remaining "count-1 darts".
