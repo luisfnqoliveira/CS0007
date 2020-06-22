@@ -1,0 +1,103 @@
+---
+layout: lab
+title: Lab 4
+subtitle: It's all fun and games
+summary: |
+  In this lab, you will implement a simple Java game, and start your implementation of the second project.
+released: 11:59 PM Sunday, June 21st, 2020.
+---
+
+
+In this lab's Part 1 you will start implementing some code for the [second project]({{site.baseurl}}/projects/02). [**If you haven't, please read the project description first!**]({{site.baseurl}}/projects/02). Having completed project 1, this part should be simple :)
+
+In Part 2, you will implement a second game!
+
+Your assignment for this lab is to solve these exercises and show them working to your TA by the end of the recitation.
+
+In the first part of the project, you will implement a small program that will kick-off the game.
+
+# Part 1 - The project kick-off
+
+Today's project kick-off is a simple one.
+Your objective for the day is to implement a couple of functions that will allow the game to interact with the user.
+
+Starting with a brand new file, you will start by implementing a program that runs the 21-card game without its intricate card mechanics.
+
+{:.question}
+|1. Implement function printWelcome that takes no arguments and prints a message that explains the game to the user. |
+
+{:.question}
+|2. Implement a function named getUserInput that takes no arguments and has the following behaviour. |
+
+Function getUserInput should:
+  1. Ask the user what is the column of the board where the memorized card is.
+  2. Ensure that the number is valid, i.e.: 1, 2, or 3. If not, it should continue asking the user to enter a valid number. You can use either recursion or a loop to perform the validation.
+  3. Return the user input.
+
+{:.question}
+|3. Implement your main function that prints the welcome message and runs the game loop 3 times. |
+
+For this lab, the loop is simply asking the user for it's input.
+
+```
+BOARD PLACEHOLDER
+In which column is your card ? (Valid options: 1, 2, 3): -1
+The number you selected is invalid!
+In which column is your card ? (Valid options: 1, 2, 3): 0
+The number you selected is invalid!
+In which column is your card ? (Valid options: 1, 2, 3): 4
+The number you selected is invalid!
+In which column is your card ? (Valid options: 1, 2, 3): 3
+In which column is your card ? (Valid options: 1, 2, 3): 2
+In which column is your card ? (Valid options: 1, 2, 3): 1
+```
+
+
+# Part 2 - Hot or Cold?
+
+Let’s practice the concepts of decisions and loops with a simple game. Your task is to write a program that generates a random number between 0 and 100 (exclusive), then ask user to guess it. If the user gets it right, congratulate them. They have won and the game ends. Otherwise, you should tell them whether their number is too high or too low and let them guess again. You should say they are “warm” when the guessed number is within 10 of the correct number and “cold” otherwise.
+
+For example, if the number is 53, any guess that was between 44 to 62 inclusive would report being “warm.” Otherwise, it would say “You’re cold.”
+
+The user is allowed to guess at most five times. If the user cannot get it right after the sixth time, they have lost and they game ends. Make sure to prompt the user with a message and explain whether their guess is correct, too low, too high, and also warm, cold, etc. I believe, after doing some napkin-math, that with seven guesses you can always get the right answer. You certainly can with eight. So, we’re being a little evil here by making the guess count. >:}
+
+The examples below show a couple of playthroughs of our game:
+```
+Enter a number between 0 and 99: 50
+Your guess is too high.
+You're cold.
+Enter a number between 0 and 99: 25
+Your guess is too high.
+You're cold.
+Enter a number between 0 and 99: 12
+Your guess is too high.
+You're warm!
+Enter a number between 0 and 99: 6
+Your guess is too low.
+You're warm!
+Enter a number between 0 and 99: 9
+Your guess is too low.
+You're warm!
+Enter a number between 0 and 99: 10
+Your guess is too low.
+You're warm!
+You lose. The number was: 11
+
+-- program is finished running --
+
+Enter a number between 0 and 99: 50
+Your guess is too low.
+You're cold.
+Enter a number between 0 and 99: 80
+Your guess is too low.
+You're cold.
+Enter a number between 0 and 99: 95
+Congratulations! You win!
+
+-- program is finished running --
+```
+
+
+# Demo
+
+Once you have finished, show the lab instructor that you have your code working.

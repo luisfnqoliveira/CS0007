@@ -1,0 +1,323 @@
+---
+layout: project
+title: Project 2
+subtitle: The 21-card trick
+summary: |
+  Mind reading! Can I guess your card?
+released: 11:59 PM Sunday, June 21st, 2020.
+due: 11:59 PM Friday, July 10th, 2020.
+---
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+</style>
+
+
+# Introduction
+
+Magic is great! But can a computer do it? Yes, yes it can.
+
+[The 21-card trick](https://en.wikipedia.org/wiki/Twenty-One_Card_Trick) is a famous card trick where the performer guesses a card chosen by the spectator.
+In this project, you will be implementing a program in Java that performs this card trick!
+
+The program will need to interact with a user and manipulate simple data structures in order to perform this trick.
+
+# Game mechanic
+
+In the following example, the cards were replaced by numbers for easier visualization of the algorithm.
+
+The trick usually goes like this (try it yourself with a set of 21 cards):
+
+1. The performer asks a spectator to choose a card out of a 21-deck and to memorize it.
+    * Let's say the spectator selected card 6!
+    * And let's assume the cards are in the performer hand in numerical order.
+
+    <table class="tg">
+      <tr>
+        <th class="tg-0lax">Hand</th>
+        <td class="tg-0lax">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21<br></td>
+      </tr>
+    </table>
+
+2. Then, the performer distributes the cards into three columns on the table (numbered from 1 to 3) one row at a time. Starting by column 1, then 2, then 3. And repeating (1, 2, 3, 1, 2, 3, ...) until all cards are placed on the table.
+
+    <table class="tg">
+      <tr>
+        <th class="tg-0lax">Col 1</th>
+        <th class="tg-0lax">Col 2</th>
+        <th class="tg-0lax">Col 3</th>
+      </tr>
+      <tr>
+        <td class="tg-0lax">1</td>
+        <td class="tg-0lax">2</td>
+        <td class="tg-0lax">3</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">4</td>
+        <td class="tg-0lax">5</td>
+        <td class="tg-0lax">6</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">7</td>
+        <td class="tg-0lax">8</td>
+        <td class="tg-0lax">9</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">10</td>
+        <td class="tg-0lax">11</td>
+        <td class="tg-0lax">12</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">13</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">15</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">16</td>
+        <td class="tg-0lax">17</td>
+        <td class="tg-0lax">18</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">19</td>
+        <td class="tg-0lax">20</td>
+        <td class="tg-0lax">21</td>
+      </tr>
+    </table>
+
+3. Once all cards are on the table, the performer asks the spectator to point to the column containing his card.
+  * Card 6 is in column 3!
+4. The performer collects the cards in each column into a single pile again. This time, the collection is made a complete column at a time; making sure the column selected by the spectator is placed in the middle of the other two.
+  * Assuming collection of column 1, then 3, then 2:
+
+      <table class="tg">
+        <tr>
+          <th class="tg-0lax">Hand</th>
+          <td class="tg-0lax">1, 4, 7, 10, 13, 16, 19, 3, 6, 9, 12, 15, 18, 21, 2, 5, 8, 11, 14, 17, 20<br></td>
+        </tr>
+      </table>
+
+5. The process is repeated 2 more times!
+    1. Place cards on the table one row at a time:
+        <table class="tg">
+          <tr>
+            <th class="tg-0lax">Col 1</th>
+            <th class="tg-0lax">Col 2</th>
+            <th class="tg-0lax">Col 3</th>
+          </tr>
+          <tr>
+            <td class="tg-0lax">1</td>
+            <td class="tg-0lax">4</td>
+            <td class="tg-0lax">7</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">10</td>
+            <td class="tg-0lax">13</td>
+            <td class="tg-0lax">16</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">19</td>
+            <td class="tg-0lax">3</td>
+            <td class="tg-0lax">6</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">9</td>
+            <td class="tg-0lax">12</td>
+            <td class="tg-0lax">15</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">18</td>
+            <td class="tg-0lax">21</td>
+            <td class="tg-0lax">2</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">5</td>
+            <td class="tg-0lax">8</td>
+            <td class="tg-0lax">11</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">14</td>
+            <td class="tg-0lax">17</td>
+            <td class="tg-0lax">20</td>
+          </tr>
+        </table>
+    2. And back to the hand one column at a time (6 is in column 3, so column 3 is collected in the middle):
+        <table class="tg">
+          <tr>
+            <th class="tg-0lax">Hand</th>
+            <td class="tg-0lax">1, 10, 19, 9, 18, 5, 14, 7, 16, 6, 15, 2, 11, 20, 4, 13, 3, 12, 21, 8, 17<br></td>
+          </tr>
+        </table>
+    3. Place cards on the table one row at a time:
+        <table class="tg">
+        <tr>
+          <th class="tg-0lax">Col 1</th>
+          <th class="tg-0lax">Col 2</th>
+          <th class="tg-0lax">Col 3</th>
+        </tr>
+        <tr>
+          <td class="tg-0lax">1</td>
+          <td class="tg-0lax">10</td>
+          <td class="tg-0lax">19</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">9</td>
+          <td class="tg-0lax">18</td>
+          <td class="tg-0lax">5</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">14</td>
+          <td class="tg-0lax">7</td>
+          <td class="tg-0lax">16</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">6</td>
+          <td class="tg-0lax">15</td>
+          <td class="tg-0lax">2</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">11</td>
+          <td class="tg-0lax">20</td>
+          <td class="tg-0lax">4</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">13</td>
+          <td class="tg-0lax">3</td>
+          <td class="tg-0lax">12</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">21</td>
+          <td class="tg-0lax">8</td>
+          <td class="tg-0lax">17</td>
+        </tr>
+        </table>
+    4. And back to the hand one column at a time (6 is in column 1, so column 1 is collected in the middle):
+        <table class="tg">
+        <tr>
+          <th class="tg-0lax">Hand</th>
+          <td class="tg-0lax">10, 18, 7, 15, 20, 3, 8, 1, 9, 14, 6, 11, 13, 21, 19, 5, 16, 2, 4, 12, 17<br></td>
+        </tr>
+        </table>
+
+6. Finally, the selected card is revealed as being the 11th card (from both ends!).
+
+Check [this video on Youtube](https://www.youtube.com/watch?v=d7dg7gVDWyg) for a demo and explanation of the Maths behind this trick! Note that the performer obfuscates the process ;)
+
+
+
+## Your assignment
+
+Implement the Java code that executes the game described above!
+
+Your program will play the role of the performer!
+1. It begins by displaying a welcome message and an explanation of what the user should do.
+2. Then, three consecutive times:
+    1. The program should place the cards in the "hand" into three columns, and show them to the user.
+    2. Ask the user where the selected card is.
+      * The user input should be validated!
+    3. Based on user input, define the order columns are collected
+      * Remember the column the user chose is always second.
+    4. Place the cards on each column back in the hand.
+3. Let the user know which card was selected!
+
+### Example run
+
+This is only an example!!! Feel free to ignore everything except functionality!
+
+```
+Welcome to the twenty-one number trick!
+This program will guess which card you are thinking about!
+Select a card from the board and memorize it!
+ 1 |  2 |  3
+--------------
+♠A | ♢2 | ♡3 |
+♠4 | ♡5 | ♠6 |
+♠7 | ♠8 | ♡9 |
+♠Q | ♠J | ♡Q |
+♠K | ♣A | ♣2 |
+♣3 | ♢4 | ♣5 |
+♢6 | ♣7 | ♢8 |
+In which column is your card ? (Valid options: 1, 2, 3): 3
+ 1 |  2 |  3
+--------------
+♢2 | ♡5 | ♠8 |
+♠J | ♣A | ♢4 |
+♣7 | ♡3 | ♠6 |
+♡9 | ♡Q | ♣2 |
+♣5 | ♢8 | ♠A |
+♠4 | ♠7 | ♠Q |
+♠K | ♣3 | ♢6 |
+In which column is your card ? (Valid options: 1, 2, 3): 2
+ 1 |  2 |  3
+--------------
+♠8 | ♢4 | ♠6 |
+♣2 | ♠A | ♠Q |
+♢6 | ♡5 | ♣A |
+♡3 | ♡Q | ♢8 |
+♠7 | ♣3 | ♢2 |
+♠J | ♣7 | ♡9 |
+♣5 | ♠4 | ♠K |
+In which column is your card ? (Valid options: 1, 2, 3): 1
+The card you thought of was: ♡3
+```
+
+
+
+## Project Stages
+
+As previously, you will be solving this project in three separate steps.
+
+### [Lab 4 - Create the main loop logic and user interaction]({{site.baseurl}}/labs/04)
+
+The tedious part of this program will be to display messages to the user, and get user input. It is also the simpler bit.
+
+During the first week, you will focus on creating an application that prints the strings to the user, implements the main (while?) loop, and asks the user for input (don't forget to validate the input!).
+
+The algorithm that puts the cards on the table and puts the cards in the hand will be ignored.
+
+### [Lab 5 - Placing the cards on the table]({{site.baseurl}}/labs/05)
+
+During the first week of the project, you will learn about arrays :D This will enable your progress along the project!
+
+And once the interaction with the user is taken care of, you will move on to implement the next step: moving the cards from the hand to the 3 columns on the table.
+
+In this lab, you will create the data structures that represent both the hand and each of the three columns. Then implement the code that copies the cards from the hand to the table. At this point, you will also implement the code that prints the table contents to the user, as it will help you debugging.
+
+### [Lab 6 - Collecting the cards from the table]({{site.baseurl}}/labs/06)
+
+In the third and final lab, you will think about collecting the cards from the columns on the table back to the hand.
+
+This last step requires that you use the user input, i.e., column containing the selected card, to decide in which order the columns will be collected. Then, you need to move the cards from each column to the hand in the correct order.
+
+Once this is done, the project should be completed!!
+
+## Helpful Tidbits
+
+### Testing
+
+DO NOT TRY TO WRITE THE WHOLE PROGRAM BEFORE TESTING IT!!!!
+ * Really! Do not do it! It's the easiest way to get overwhelmed and confused without knowing what to do!
+ * Implement small parts of the code and test them!
+
+### Split your code into functions
+Use functions! They will help you manage the cognitive load. Here is a starting point!
+More details will be given in each individual lab.
+
+
+# Submission
+
+Submit a single ZIP file with your project named username_proj1.zip (e.g. lun8_proj2.zip). In the zip file, there should be no folder!, just the following files:
+
+1. Your Project2.java file. Put your name and username at the top of the file in comments!
+2. A `readme.txt` file. It should contain:
+
+    - Your name
+    - Your Pitt username
+    - Anything that does not work
+    - If you attempted the extra credit
+    - Anything else you think might help grading your project more easily
+
+Submit into the submissions Box folder I have shared with you. Your Box folder (you have 50GB!) is accessible through http://my.pitt.edu. When you see your file within the shared folder, you know you have uploaded it successfully. If you would like to resubmit, you can copy the file in again. Let me know immediately if there are any problems submitting your work.
