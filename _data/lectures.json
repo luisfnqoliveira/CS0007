@@ -68,6 +68,9 @@
   {
     "title": "Functions",
     "slides": {
+      "pdf": "/slides/05_CS0007_Functions.pdf",
+      "pptx": "/slides/05_CS0007_Functions.pptx"
+
     },
     "examples": {
       "FunctionsAKAMethods": "/code_snippets/functions/FunctionsAKAMethods.java",
