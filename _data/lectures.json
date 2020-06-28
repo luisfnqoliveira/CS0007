@@ -86,13 +86,56 @@
   {
     "title": "Loops",
     "slides": {
+      "pdf": "/slides/06_CS0007_Loops.pdf",
+      "pptx": "/slides/06_CS0007_Loops.pptx"
+
+    },
+    "examples": {
+      "WhileDo": "/code_snippets/functions/WhileDo.java",
+      "DoWhile": "/code_snippets/functions/DoWhile.java",
+      "For": "/code_snippets/functions/For.java",
+      "AddNumbers": "/code_snippets/functions/AddNumbers.java",
+      "InputValidation": "/code_snippets/functions/InputValidation.java",
+      "MultiplicationTable": "/code_snippets/functions/MultiplicationTable.java",
+      "Nest": "/code_snippets/functions/Nest.java",
+      "Sentinel": "/code_snippets/functions/Sentinel.java",
+      "Time": "/code_snippets/functions/Time.java"
+    }
+  },
+  {
+    "title": "Arrays",
+    "slides": {
+      "pdf": "/slides/07_CS0007_Arrays.pdf",
+      "pptx": "/slides/07_CS0007_Arrays.pdf"
+
+    },
+    "examples": {
+      "Arrays": "/code_snippets/arrays/Arrays.java",
+      "FunctionCallingArrays": "/code_snippets/arrays/FunctionCallingArrays.java",
+      "CalculateSumOfUserNumbers": "/code_snippets/arrays/CalculateSumOfUserNumbers.java",
+      "MaxVal": "/code_snippets/arrays/MaxVal.java"
+
+    }
+  },
+  {
+    "title": "Review for midterm",
+    "date": "June 29",
+    "slides": {
     },
     "examples": {
     }
   },
   {
     "title": "Midterm",
-    "date": "June 29",
+    "date": "July 1st",
+    "slides": {
+    },
+    "examples": {
+    }
+  },
+  {
+    "title": "Midterm",
+    "date": "July 1st",
     "slides": {
     },
     "examples": {

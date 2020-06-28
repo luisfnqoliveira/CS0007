@@ -1,0 +1,276 @@
+---
+layout: lab
+title: Lab 5
+subtitle: It's all fun and games
+summary: |
+  In this lab, you will continue the implementation of the second project.
+released: 11:59 PM Sunday, June 28th, 2020.
+---
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+</style>
+
+
+In this lab you will continue your implementation of the [second project]({{site.baseurl}}/projects/02). [**If you haven't, please read the project description first!**]({{site.baseurl}}/projects/02).
+
+In the previous lab, you implemented the interaction with the user. That was the easy bit! Now things will get a bit more difficult :)
+But hopefully not too much!
+
+
+# Hands, and columns
+
+This week in CS0007!
+
+## Keeping track of multiple values
+
+In lecture last week, we learned about a new way of holding multiple pieces of data: Arrays!
+
+Arrays can hold any type of data, but a given array can only hold one type of data.
+
+```Java
+double[] thisCanOnlyHoldDoubles = new double[10];
+int[] thisCanOnlyHoldInts = new int[10];
+String[] thisCanOnlyHoldStrings = new String[10];
+char[] thisCanOnlyHoldChars = new char[10];
+anything[] youGetTheIdea = new anything[10];
+void[] almostAnything... :D // This cannot be done!
+```
+
+Now that you know about arrays, you can progress the project!
+Arrays are the perfect fit as a data structure that keeps a record of which cards are in the magician's hand and on the table.
+
+**Imagine having to keep 21 different variables (one for each card) O.o**
+
+This lab will emulate the next part of the magic trick: Placing the cards the magician has in its hands on the table.
+However, this being a computer program we have to find analogous data structures to the "magician hands" and "the three columns on the table".
+Once we have those analogues we can start implementing the trick!
+
+In other words... let's create some variables.
+
+
+**Note:** Read below for implementation suggestions!
+
+{:.question}
+|1. (The easy) Start by creating 4 variables: (1) one array named hand long enough to hold ALL the 21 cards, (2) three arrays long enough to hold each of the 7 card columns in the table. |
+
+### Implementation suggestion 0
+
+```java
+if(you know about 2-D arrays) {
+  maybe you can make your board a 2-D array?
+} else {
+  ignore this section! I have not talked about that in class :)
+}
+```
+
+### Implementation suggestion 1
+
+I suggest you make these `class variables`. I.e.: you declare them within the class body, making them visible to all functions without the need to use input arguments.
+
+```
+class Project2
+{
+  static int[] classVariable = {1,2,3};
+
+  public static void main( String [] args )
+  {
+    //Stuff
+  }
+
+}
+```
+
+### Implementation suggestion 2
+
+In the final version of our game, the hand will hold cards which look fancy! Like: `♡3`.
+This is what I used:
+```
+{"♠A", "♢2", "♡3", "♠4", "♡5", "♠6", "♠7", "♠8", "♡9", "♠Q", "♠J", "♡Q", "♠K", "♣A", "♣2", "♣3", "♢4", "♣5", "♢6", "♣7", "♢8"}
+```
+But to begin with, I'd recommend you use numbers!
+Trust me! They are easier to debug :')
+
+For example, I struggled with keeping tabs on where the cards are/should be when you mix them up:
+
+```
+--------------
+♠A | ♢2 | ♡3 |
+♠4 | ♡5 | ♠6 |
+♠7 | ♠8 | ♡9 |
+♠Q | ♠J | ♡Q |
+♠K | ♣A | ♣2 |
+♣3 | ♢4 | ♣5 |
+♢6 | ♣7 | ♢8 |
+```
+
+Using numbers simplifies the problem:
+
+```
+--------------
+ 1 |  2 |  3 |
+ 4 |  5 |  6 |
+ 7 |  8 |  9 |
+10 | 11 | 12 |
+13 | 14 | 15 |
+16 | 17 | 18 |
+19 | 20 | 21 |
+```
+
+
+### Back to regular programming
+
+Now we can proceed to implement the next step: print the columns! This is part of the game, BUT it will also help you debug your code.
+
+Fun thing:
+```
+Did you know that: despite the term existing before computers (I did not know this!),
+because of having to remove actual bugs that halted in their tracks early computers,
+the term debug was preserved in computers and software.
+```
+
+Let's write some code.
+
+{:.question}
+|2. (The hard) Write function `printBoard` that returns nothing and accepts no arguments. This function prints the board that the user will see when selecting its card.|
+
+**Note:** If you did not make the 4 variables `class variables`, you will need to pass the columns as arguments to the function.
+
+**For reference:** My function is 10-ish lines long.
+
+### Implementation suggestion 1
+
+Initialize your 3 column variables as a sequence of numbers. E.g.:
+```
+column1 = {1,2,3,4,5,6,7}
+column2 = {8,9,10,11,12,13,14}
+...
+```
+
+Then, you can make sure your function `printBoard` is working properly.
+If you do that, then this should by your output:
+```
+--------------
+ 1 |  8 | 15 |
+ 2 |  9 | 16 |
+ 3 | 10 | 17 |
+ 4 | 11 | 18 |
+ 5 | 12 | 19 |
+ 6 | 13 | 20 |
+ 7 | 14 | 21 |
+```
+
+### Back to regular programming... again
+
+The last step will be the simulation of
+moving the cards from the hand to the 3 columns on the table.
+
+
+
+{:.question}
+|3. (The nightmare) Write function `copyHandToColumns` that takes the cards from the hand array, and places them in each of the 3 columns.|
+
+Remember, if this is the hand:
+
+<table class="tg">
+  <tr>
+    <th class="tg-0lax">Hand</th>
+    <td class="tg-0lax">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21<br></td>
+  </tr>
+</table>
+
+Then, the performer distributes the cards into three columns on the table (numbered from 1 to 3) one **row** at a time. Starting by column 1, then 2, then 3. And repeating (1, 2, 3, 1, 2, 3, ...) until all cards are placed on the table.
+
+<table class="tg">
+  <tr>
+    <th class="tg-0lax">Col 1</th>
+    <th class="tg-0lax">Col 2</th>
+    <th class="tg-0lax">Col 3</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">15</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">16</td>
+    <td class="tg-0lax">17</td>
+    <td class="tg-0lax">18</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">19</td>
+    <td class="tg-0lax">20</td>
+    <td class="tg-0lax">21</td>
+  </tr>
+</table>
+
+
+
+**Welcome to programming:** The difficulty of this question lies on the design of the loop that copies the cards from the hand to each of the columns :/
+
+### Implementation suggestion 1
+
+If you state the problem like:
+```
+For each of the 21 cards in the hand:
+  - we put it on the table one column at a time.
+```
+
+Then you can make a loop that iterates the hand variable, bu-ut:
+  - how do you translate the hand index to a column index
+  - how do you know to which column should this card go?
+    - If you have a 2-D array: integer division/modulus? :D
+    - If you don't have 2-D arrays: I think the next suggestion makes it easier.
+
+### Implementation suggestion 2
+
+If you state the problem like:
+```
+For each of the 7 rows:
+  - we take one card from the hand and put it in column 1
+  - then we take one card from the hand and put it in column 2,
+  - and then we take one card from the hand and put it in column 3.
+```
+
+Then you make a loop that iterates each of the 7 rows, bu-ut:
+  - Since the loop variable only takes 7 different values, how do we index 21 different cards?
+    - Maybe an extra variable to keep track of which card we need to take next?
+      - Like we did in lecture to keep track where to insert the next number input by the user!
+
+**For reference:** My function is 10-ish lines long.
+
+
+### The choice is yours
+
+Do you have any other ideas? Go for it.
+But I suggest you write it down first.
+
+Otherwise, I'd go with Implementation suggestion 2 above :)
+
+# Demo
+
+Once you have finished, don't forget to show the lab instructor that you have your code working.
