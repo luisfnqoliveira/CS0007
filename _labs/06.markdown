@@ -1,0 +1,166 @@
+---
+layout: lab
+title: Lab 6
+subtitle: It's all fun and games
+summary: |
+  In this lab, you will finish the implementation of the second project.
+released: 11:59 PM Sunday, July 5th, 2020.
+due: Check project 2 for deadline.
+---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+</style>
+
+
+
+This lab is Part 3 for the [second project]({{site.baseurl}}/projects/02), read the project description again if you need to jog your memory.
+
+{:.blinking}
+This time you will need to submit your final project work to be graded! [**Check project 2 description for deadline and submission instructions!**]({{site.baseurl}}/projects/02).
+
+If you haven't yet, try running the trick with actual playing cards (or just cut 21 pieces of paper and draw some numbers in them :).
+This can provide a bit of insight into the trick! And thus how it is implemented.
+
+
+## Now the exercise!
+
+Using your lab 5 implementation, add a couple more functions to complete your game.
+
+As before, my advice is to work with numbers until you are ready for the final version.
+But then, you can just replace in an array of cards. Here is the one I used, if you want to copy-paste it into your code :)
+
+```
+static String[] hand = {"♠A", "♢2", "♡3", "♠4", "♡5", "♠6", "♠7", "♠8", "♡9", "♠Q", "♠J", "♡Q", "♠K", "♣A", "♣2", "♣3", "♢4", "♣5", "♢6", "♣7", "♢8"};
+```
+
+**Note:** You will have to change the type of your arrays from `int` to `String`. But it shouldn't have a huge impact on the remaining code.
+
+
+The final assignment for this project is to collect the cards from the table (your 3 `columnX` arrays) back into the magician's hand (your `hand` array).
+**Adjust the names if you named them differently :)**
+
+
+{:.question}
+|1. Write function `copyColumnsToHand` that returns nothing and accepts one argument: The column the user selected (the one with its card).|
+
+### Small recap
+
+When collecting the cards from the table you want to collect the columns in such a way that the column with the player's card is collected second. E.g.
+```
+Hi Dave, where is your card?
+Hi HAL, it's in column 1.
+```
+
+Then there are 2 ways of collecting the cards from the table:
+1. Columns 2, 1, 3
+2. Columns 3, 1, 2
+
+This means that the first and last columns don't really matter, as long as the second column is the one the user selected.
+
+### Implementation suggestion 1
+
+When developing a function, it is a good thing to test it independently of the remaining code. Otherwise, bugs in another bit of code may creep into the execution and make finding mistakes difficult.
+So my advice, is to ONLY execute the function you are about to implement, not the whole game (ask user for input, place cards in table and ONLY THEN collect them).
+Instead, initialize your 3 column variables as a sequence of numbers and run your function. E.g.:
+```
+static String[] column1 = {1,2,3,4,5,6,7};
+static String[] column2 = {8,9,10,11,12,13,14};
+static String[] column3 = {15,16,17,18,19,20,21};
+
+main(String[] args) {
+  copyColumnsToHand(1);
+  printHand(); // Not part of the project, but simple to implement
+  copyColumnsToHand(2);
+  printHand();
+  copyColumnsToHand(3);
+  printHand();
+}
+```
+
+Then make sure your hand contains the correct sequence depending which is the column that you input.
+Maybe you can implement a function that prints the `hand` array for debugging purposes.
+
+If you do that, then this should by your output:
+```
+15 16 17 18 19 20 21 1 2 3 4 5 6 7 8 9 10 11 12 13 14 <- Collected columns 3, 1, 2
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 <- Collected columns 1, 2, 3
+8 9 10 11 12 13 14 15 16 17 18 19 20 21 1 2 3 4 5 6 7 <- Collected columns 2, 3, 1
+```
+
+### Implementation suggestion 2
+
+Maybe creating a triplet of functions to collect each column can help?
+Maybe a function that collects column 1 and places the cards in the hand?
+Maybe such function should have an argument that indicates in which index of the `hand` the program should start putting cards in?
+Just maybe? :)
+
+Like:
+> Hey function, collect column 1 and place the cards in the hand starting in position 7...
+
+Function:
+> Ok, here you go:
+
+```
+? ? ? ? ? ? ? 1 2 3 4 5 6 7 ? ? ? ? ? ? ?
+```
+
+(Question marks mean we don't know what it is there, because we didn't place stuff there yet :)
+
+### Finishing the game!
+
+{:.question}
+|2. Put everything together. Now the fun starts. |
+
+**Hint:** At this point every part of the project should be working. But as you bring things together they may interact the wrong way.
+If that happens and parts work but the whole doesn't, don't despair! Start commenting out your code and adding a piece at a time.
+This will help figuring out where the problem is. Then it's a matter of fixing it.
+
+As usual, if you get stuck, ask for help!
+
+# Demo
+
+Once you have finished, show the lab instructor what you did in Lab 6.
+
+# Beyond the lab
+
+Now, until the deadline, make sure everything is working and submit it following the instructions in [the project 2 description]({{site.baseurl}}/projects/02).
+
+## Extra credit
+
+You want more, you say? Well, what about this for extra 10%?
+Implement card shuffling. Let's confuse the player a bit more :) after all this is supposed to be magic!
+
+An algorithm to shuffle the cards is the Fisher-Yates shuffle algorithm.
+
+This is how it works:
+1. Have an array with all the elements filled in.
+2. For `i` = length-1 down to 1 (inclusive)
+  - Pick a random number `r` ranging between 0 and `i`.
+  - Swap the `i`-th element of the array with the `r`-th element of the array.
+  - Continue loop.
+3. The array elements are now in a random order.
+
+Example:
+
+| Iteration | Random Range | Random Number | Array | Explanation|
+|-|
+|Initial   | | | 0,1,2,3,4,5,6,7| Initial array |
+|7   | 0-7 | 4 | 0,1,2,3,7,5,6,4| Swapped indices 4 and 7 |
+|6   | 0-6 | 2 | 0,1,6,3,7,5,2,4| Swapped indices 2 and 6 |
+|5   | 0-5 | 2 | 0,1,5,3,7,6,2,4| Swapped indices 2 and 5 |
+|4   | 0-4 | 1 | 0,7,5,3,1,6,2,4| Swapped indices 1 and 4 |
+|3   | 0-3 | 2 | 0,7,3,5,1,6,2,4| Swapped indices 2 and 3 |
+|2   | 0-2 | 0 | 3,7,0,5,1,6,2,4| Swapped indices 0 and 2 |
+|1   | 0-1 | 0 | 3,7,0,5,1,6,2,4| Swapped indices 0 and 0 |
+
+
+Implement this algorithm and shuffle the cards in the magician's hand before starting the game.
+
+If there is something else you want to try for extra credit, let me know and I'll let you know if that's acceptable.
