@@ -1,0 +1,165 @@
+---
+layout: lab
+title: Lab 7
+subtitle: Fun small exercises
+summary: |
+  In this lab, we'll take a break from projects, and solve some fun problems
+released: 11:59 PM Sunday, July 12th, 2020.
+---
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+</style>
+
+
+# Part A: Summing digits.
+
+Last week I was looking at a problem that reminded me of something that I learned a while ago:
+
+## Old-guy memories
+
+When I was a kid (feels like 25 years have passed... erm... I guess they did? O.o) I learned of a cool trick to quickly check the result of additions: Casting out the 9's.
+
+This method works like this. When I add 123 and 256 and I get the result equal to 379. I can do the following to validate the result:
+
+```
+Add the digits of the addends, if it goes over 9 go back to zero:
+1 + 2 = 3
+3 + 3 = 6
+6 + 2 = 8
+8 + 5 = 13 (-9) = 4
+4 + 6 = 10 (-9) = 1
+
+Add the digits of the result, if it goes over 9 go back to zero:
+3 + 7 = 10 (-9) = 1
+1 + 9 = 10 (-9) = 1
+```
+
+If the two values are different, then the operation is wrong. If both are correct, then we can't tell for sure :)
+
+Then why is this useful? Because it eliminates off-by-one errors (actually off-by-up-to-8 errors) because the result only repeats if you make mistakes that add up to 9 :)
+
+
+## What reminded me of this?
+
+There is this operation that is known as the digital root. That serves that same purpose.
+
+The digital root is calculated by adding recursively the digits of a number. E.g.:
+
+```
+digital root of 25453 = 1 because: 2+5+4+5+3 = 19 => 1+9=10 => 1+0=1
+digital root of 25589 = 1 because: 2+5+5+8+9 = 29 => 2+9=11 => 1+1=2
+digital root of 15 = 6 because: 1+5=6
+digital root of 123 = 6 because: 1+2+3=6
+digital root of 256 = 4 because: 2+5+6=13 => 1+3=4
+digital root of 379 = 1 because: 3+7+9=19 => 1+9=10 => 1+0=1
+```
+
+And this can be used to check Maths:
+
+```
+256 + 123 = 379
+digitalRoot(256) = 4
+digitalRoot(123) = 6
+Extra step: 4+6 = 10 => digitalRoot(10) = 1
+digitalRoot(379) = 1
+```
+
+Also works with subtraction: `256-123=133`
+
+```
+digitalRoot(256) = 4
+digitalRoot(123) = 6
+Extra step: 4-6 = -2 => No problem just 9-2 = 7, cause of reasons :)
+digitalRoot(133) = 7
+```
+
+Multiplication 256*123=31488:
+```
+digitalRoot(256) = 4
+digitalRoot(123) = 6
+Extra step: 4*6 = 24 => digitalRoot(24)=6
+digitalRoot(31488) = 3+1+4+8+8=24 => 2+4=6
+```
+
+Division: $$\frac{31488}{123} = 256$$ ... so ... $$31488 = 256\times123$$ :D
+
+
+## So what is the deal?
+
+{:.question}
+|1. Implement the digitalRoot function that calculates the digital root of a positive integer.|
+
+### Helpful Tidbits
+
+1. Modulo is great
+
+    Did you ever notice that?
+    ```
+    12345/10 = 1234
+    12345%10 = 5
+    ```
+
+2. There is a class named Integer that can help converting String into int
+    You can convert a number to a string, right?
+    ```
+    ""+12345 = "12345"
+    ```
+
+    This converts a string into an int:
+    ```
+    Integer.parseInt("12345") = 12345
+    ```
+
+
+# Part B: Fun with sequences.
+
+Can you guess the next line in the following sequence? :D
+
+```
+1
+11
+21
+1211
+?
+```
+<details><summary>Answer</summary>
+<p>
+The next element is: `111221`.
+</p>
+</details>
+
+What about the next in the sequence? :)
+
+<details><summary>Answer</summary>
+<p>
+The next element is: `312211`.
+</p>
+</details>
+
+
+What is this? It's called the Look-and-say sequence.
+Because if you read it, you can easily tell the next element :)
+
+The first entry is: `1`
+
+If you read it out-loud, it's `1 time the number 1` or `1 1`.
+
+If you read it out-loud, it's `2 times the number 1` or `2 1`.
+
+If you read it out-loud, it's `1 time the number 2 and 1 time the number 1` or `1 2 1 1`.
+
+If you read it out-loud, it's `1 time the number 1, 1 time the number 2, and 2 times the number 1` or `1 1 1 2 2 1`.
+
+
+
+{:.question}
+|2. Implement (with no extra clues >:) a program that asks the user for a starting value for the sequence, e.g. `1`, and the number of lines to display. Then using that input, display the requested number of lines of the Look-and-say sequence.|
+
+**Ok ONE HINT!!**: "123".charAt(1)
