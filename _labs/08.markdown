@@ -1,0 +1,29 @@
+---
+layout: lab
+title: Lab 8
+subtitle: The last project
+summary: |
+  The last stretch
+released: 11:59 PM Sunday, July 19th, 2020.
+---
+
+[**The last project can be found in the website**]({{site.baseurl}}/projects/03). [**If you haven't, please read the project description!**]({{site.baseurl}}/projects/03).
+
+
+Other than the description, there is not much to add this week :)
+
+
+# This week
+
+{:.question}
+|1. Read the startup program I give you. And making sure you understand it.|
+
+{:.blinking}
+Do that ASAP! And ask any questions you may have.
+
+|2. Modify the program I gave you according to the project description.|
+
+# Next week
+
+We'll use some files to input/output data to/from your simulation. :)
+And I'll give you some opportunity for extra credit.

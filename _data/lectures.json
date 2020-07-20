@@ -136,15 +136,30 @@
     }
   },
   {
-    "title": "Midterm",
+    "title": "Array Operations",
     "date": "July 1st",
     "slides": {
     },
     "examples": {
+      "ArrayOperations": "/code_snippets/arrays/ArrayOperations.java"
     }
   },
   {
-    "title": "Files",
+    "title": "2D Arrays and Classes",
+    "date": "July 1st",
+    "slides": {
+      "pdf": "/slides/08_CS0007_Classes.pdf",
+      "pptx": "/slides/08_CS0007_Classes.pdf"
+    },
+    "examples": {
+      "FractionTester.java": "/code_snippets/classes/FractionTester.java",
+      "Fraction.java": "/code_snippets/classes/Fraction.java",
+      "OOArrayOperations": "/code_snippets/classes/OOArrayOperations.java",
+      "MyArray": "/code_snippets/classes/MyArray.java"
+    }
+  },
+  {
+    "title": "My friends database, and files",
     "slides": {
     },
     "examples": {
@@ -165,16 +180,15 @@
     }
   },
   {
-    "title": "Object-oriented programming",
+    "title": "A new programming language (maybe?) TBD O.o",
     "slides": {
     },
     "examples": {
     }
   },
   {
-    "title": "A new programming language TBD O.o",
-    "slides": {
-    },
+    "date": "LAST CLASS",
+    "title": "Final",
     "examples": {
     }
   }

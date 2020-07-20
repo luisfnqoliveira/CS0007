@@ -1,0 +1,415 @@
+---
+layout: project
+title: Project 3
+subtitle: Gold Fetchers Inc.
+summary: |
+  Simulating a bunch of dwarfs. This project was (very) loosely based on a project I did many years ago :) Hope it's fun.
+released: 11:59 PM Sunday, July 19th, 2020.
+due: 11:59 PM Friday, August 1st, 2020.
+---
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+</style>
+
+# Gold Fetchers
+
+GF Inc. is a company dedicated to fetch gold coins from lost pots. The company is ran by dwarfs, everybody knows dwarfs
+love gold coins! Currently, GF is ran by a manager that assigns individual dwarfs to missions. Missions involve a couple days
+of travel all the way to a pot with gold coins. When a dwarf reaches a pot of gold coins, it grabs as many as it can: 1 coin; after
+all, dwarves have small hands. Finally, the dwarf returns to the base of operations to hand the coin to its supervisor.
+
+The dwarf manager is the dwarf's supervisor. Its job is to assign the dwarves it supervises to missions to collect gold coins,
+and collect the coins when the dwarves return with the spoils of their mission.
+
+Every day the dwarf manager goes to work, the same tasks await the seasoned manager:
+   1. Check the status of dwarves that were working the previous day - The manager checks all the pots that had a dwarf
+   assigned. If a mission has been completed, then the manager collects the coins from the dwarf and makes a note that
+   the dwarf is now idle. If the mission hasn't been completed, then nothing happens.
+
+   2. Assign new work to the dwarf workers - The second part of its job involves assigning dwarves to visit pots that still
+   hold some gold coins. A pot can only have a single dwarf assigned to it. And dwarves cannot be assigned simultaneous to multiple teams.
+
+Dwarves are the Gold Fetchers. Each dwarf can only hold a single gold coin.
+Therefore, dwarves usually need to go into several expeditions to collect all the coins in a pot.
+
+
+[Download this Java program that simulates the inner working of GF Inc.]({{site.baseurl}}/projects/03/GFInc.zip)
+
+
+# The project
+
+Things are changing for the dwarf workers! They just created a union: The DUOGF (Dwarf Union Of Gold Fetchers), and their
+lives are starting to improve. DUOFG managed to negotiate some rules that change how missions are executed.
+
+1. Dwarfs cannot go in missions alone. Missions are dangerous (after all, dragons also love gold!), so **Teams** of dwarfs
+need to be assembled and assigned to pots. The exact number of elements in a team is still being discussed; so you have to
+account for different possibilities on your implementation.
+
+2. Dwarfs MUST have 1 day break between missions. This means that a dwarf cannot be assigned to a new mission the same
+day or the next day after it arrives from its last mission. This will stop dwarf workers being exploited to exhaustion.
+E.g., if the dwarf returns on day 1, it can only be reassigned on day 3.  
+
+In this 3rd (and final) project, you will modify the program that simulates the current GF Inc. to include the changes
+negotiated by the DUOFG.
+
+
+## New job descriptions
+
+The dwarf manager works as a supervisor for teams of dwarfs going out to collect gold coins from the distant pots of gold coins.
+Its job is to assign the dwarfs it supervises to teams, to dispatch those teams to pots of gold coins, and collect the coins
+when the teams return with the spoils.
+
+Every day the dwarf manager goes to work, the same tasks await the seasoned manager:
+   1. Check the status of teams that were working the previous day - The manager checks all the pots that had a team
+   assigned. If a team completed its mission to collect gold coins, then the manager will get the coins from each team   
+   member, and it disassembles the team. If the team did not complete the mission, then nothing happens.
+
+   2. Assign new work to the dwarf workers - The second part of its job involves assembling a team to visit pots that still
+   hold some gold. Once it assembles a team, the manager will try to assign the team to a pot of gold coins. A pot can only
+   have a single team assigned to it.
+   Only complete teams will be assigned to a pot of gold coins. If the team is incomplete, i.e. the number
+   of elements is less than mandated by the DUOGF (the Dwarf Union Of Gold Fetchers), then the manager will disassemble
+   it and wait until other dwarfs are back from their missions.
+
+Dwarves are the Gold Fetchers. But they do not go alone, DUOFG mandates that dwarves can only go fetch gold coins in teams.
+In your program the size of the team will be a configurable parameter (check the Main.java file). Obviously, dwarves can only
+be assigned to one team. So, if a dwarf has been assigned, the manager cannot assign it until it returns from its gold fetching mission.
+
+Each dwarf can only hold a single gold coin. Therefore, dwarves usually need to go into several expeditions to collect all the coins in a pot.
+
+Dwarves are assigned to teams by the Dwarf Manager.
+
+
+# Example outputs
+
+Currently, using the project you downloaded above, this is the output.
+
+```
+Simulating day 0
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigned a dwarf to pot: 0
+Assigning Balin
+Assigned a dwarf to pot: 1
+Assigning Dís
+Assigned a dwarf to pot: 2
+Glad to report our vaults contain 0 gold coins so far.
+
+Simulating day 1
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 1
+Dwarf Balin has returned!
+Balin collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Balin
+Assigned a dwarf to pot: 1
+Glad to report our vaults contain 1 gold coins so far.
+
+Simulating day 2
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 0
+Dwarf Azaghâl has returned!
+Azaghâl collected 1 gold coin(s) today.
+Dwarf returned from its mission to gold pot: 1
+Dwarf Balin has returned!
+Balin collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigned a dwarf to pot: 0
+Assigning Balin
+Assigned a dwarf to pot: 1
+Glad to report our vaults contain 3 gold coins so far.
+
+Simulating day 3
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 1
+Dwarf Balin has returned!
+Balin collected 1 gold coin(s) today.
+Dwarf returned from its mission to gold pot: 2
+Dwarf Dís has returned!
+Dís collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Balin
+Assigned a dwarf to pot: 2
+Glad to report our vaults contain 5 gold coins so far.
+
+Simulating day 4
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 0
+Dwarf Azaghâl has returned!
+Azaghâl collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigned a dwarf to pot: 0
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 5
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 6
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 0
+Dwarf Azaghâl has returned!
+Azaghâl collected 1 gold coin(s) today.
+Dwarf returned from its mission to gold pot: 2
+Dwarf Balin has returned!
+Balin collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigned a dwarf to pot: 2
+Glad to report our vaults contain 8 gold coins so far.
+
+Simulating day 7
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 8 gold coins so far.
+
+Simulating day 8
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 8 gold coins so far.
+
+Simulating day 9
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 2
+Dwarf Azaghâl has returned!
+Azaghâl collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigned a dwarf to pot: 2
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 10
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 11
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 12
+One more day of work!
+Checking if any dwarf is back...
+Dwarf returned from its mission to gold pot: 2
+Dwarf Azaghâl has returned!
+Azaghâl collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Glad to report our vaults contain 10 gold coins so far.
+
+Simulation was completed!
+```
+
+Using the same dwarves and pots, building teams of 3 dwarves this should be the output of your program:  
+
+```
+Simulating day 0
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigning Balin
+Assigning Dís
+Assigned a team to pot: 0
+Assigning Durin
+Assigning Gimli
+Assigning Náin
+Assigned a team to pot: 1
+No dwarfs available! No team was assigned to pot: 2
+Glad to report our vaults contain 0 gold coins so far.
+
+Simulating day 1
+One more day of work!
+Checking if any dwarf is back...
+Team returned from its mission to gold pot: 1
+Team: Durin , Gimli, Náin,  collected 3 gold coin(s) today.
+Doing job assignments for the day...
+No dwarfs available! No team was assigned to pot: 2
+Glad to report our vaults contain 3 gold coins so far.
+
+Simulating day 2
+One more day of work!
+Checking if any dwarf is back...
+Team returned from its mission to gold pot: 0
+Team: Azaghâl, Balin, Dís,  collected 3 gold coin(s) today.
+Doing job assignments for the day...
+No dwarfs available! No team was assigned to pot: 2
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 3
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Assigning Durin
+Assigning Gimli
+Assigning Náin
+Assigned a team to pot: 2
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 4
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 5
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 6 gold coins so far.
+
+Simulating day 6
+One more day of work!
+Checking if any dwarf is back...
+Team returned from its mission to gold pot: 2
+Team: Durin , Gimli, Náin,  collected 3 gold coin(s) today.
+Doing job assignments for the day...
+Assigning Azaghâl
+Assigning Balin
+Assigning Dís
+Assigned a team to pot: 2
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 7
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 8
+One more day of work!
+Checking if any dwarf is back...
+Doing job assignments for the day...
+Glad to report our vaults contain 9 gold coins so far.
+
+Simulating day 9
+One more day of work!
+Checking if any dwarf is back...
+Team returned from its mission to gold pot: 2
+Team: Azaghâl, Balin, Dís,  collected 1 gold coin(s) today.
+Doing job assignments for the day...
+Glad to report our vaults contain 10 gold coins so far.
+
+Simulation was completed!
+```
+
+## What to look for in the output above?
+1. In day 1, no team is assigned to pot 2, because the 3 dwarves that just arrived need some rest. There is 1 rested dwarf (Thrór) but not enough to form a team.
+2. In day 3, the dwarves have finally rested enough to be reassigned.
+3. In day 6 a team of dwarves arrived from pot 2, and in THE SAME DAY a team composed of DIFFERENT dwarves was assigned to the same pot.
+ The only rule is that the dwarves must rest, nothing prohibits another team being assigned in the same day.
+4. In day 9, the 3-dwarf team only brought 1 coin back. Because there was only 1 coin left in the pot! :)
+
+
+
+# Project Stages
+
+As previously, you will be solving this project in two different labs.
+
+### [Lab 8 - Make the changes necessary to simulate the new GR Inc.]({{site.baseurl}}/labs/08)
+
+Understand and redesign the program to simulate the company under the new rules.
+
+### [Lab 9 - Read configurations from a file and write the report to a file]({{site.baseurl}}/labs/09)
+
+Change the code to allow dwarves (number and names), number of elements in a team, and list of pots to be defined in a configuration file.
+
+Once this is done, the project should be completed!!
+
+
+# Helpful Tidbits
+
+## Testing
+
+DO NOT TRY TO WRITE THE WHOLE PROGRAM BEFORE TESTING IT!!!!
+ * Really! Do not do it! It's the easiest way to get overwhelmed and confused without knowing what to do!
+ * Implement small parts of the code and test them!
+
+## Split your code into functions
+Use functions! They will help you manage the cognitive load. Here is a starting point!
+
+# Suggested changes to object design
+
+## DwarfManager
+
+### Attributes
+- `int numberOfTeamElements` - Number of team members mandated by the DUOGF (the Dwarf Union Of Gold Fetchers)
+
+
+### Constructors
+- `DwarfManager(Dwarf[] dwarves, PotOfGold[] potsOfGold, int numberOfTeamElements)` - Initializes the attributes
+
+### Methods
+- `Team assembleTeam()` - Creates a Team and assign as many Dwarves as fit the team. Only assigns a Dwarf if it is not assigned to another team.
+- `void disassembleTeam( Team team )` - For each team member, remove it from the team.
+- `boolean startNewMission( PotOfGoldCoins pot )` - Assembles and assigns a team to the pot of gold coins.
+- `void dayOfWork(int day)` - Implement the Dwarf Manager daily job (see above) for teams
+
+## Dwarf
+
+### Attributes
+- `int idleDays` - Number of days the dwarf has been idle
+
+### Methods
+- `boolean canWork()` - Can the dwarf be reassigned?
+
+
+## Team
+
+### Attributes
+
+- `Dwarf[] dwarves` - Array with enough space to hold all dwarves assigned to the team.
+- `int nDwarves` - Number of dwarves actually in the team.
+
+### Constructors
+
+- `Team(int maximumTeamSize)` - Initializes the attributes
+
+### Methods
+
+- `Dwarf[] getMembers()` - Get all dwarves in the team.
+- `boolean isFull()` - Returns true if the team is full.
+- `void addMember(Dwarf dwarf)` - Adds a dwarf to the team, if there is enough space.
+- `void removeMembers()` - Removes all dwarves from the team.
+
+
+
+
+
+# Submission
+
+Submit a single ZIP file with your project named username_proj3.zip (e.g. lun8_proj3.zip). In the zip file, there should be no folder!, just the following files:
+
+1. Your Java project (all files! including the ones you did not change!)
+2. A `readme.txt` file. It should contain:
+
+    - Your name
+    - Your Pitt username
+    - What changes you needed to make.
+    - Your approach designing the Team class
+    - Anything that does not work
+    - If you attempted the extra credit
+    - Anything else you think might help grading your project more easily
+
+Submit into the submissions Box folder I have shared with you. Your Box folder (you have 50GB!) is accessible through http://my.pitt.edu. When you see your file within the shared folder, you know you have uploaded it successfully. If you would like to resubmit, you can copy the file in again. Let me know immediately if there are any problems submitting your work.
