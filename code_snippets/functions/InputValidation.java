@@ -48,8 +48,8 @@ class InputValidation
 
   public static void main(String []args)
   {
-    System.out.pringln("Number: " + getNumber_1_100() );
-    System.out.pringln("Color: " + selectColor() );
+    System.out.println("Number: " + getNumber_1_100() );
+    System.out.println("Color: " + selectColor() );
   }
 
 }
