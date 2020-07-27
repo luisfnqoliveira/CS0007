@@ -167,24 +167,22 @@
     }
   },
   {
-    "title": "Error handling",
-    "slides": {
-    },
-    "examples": {
-    }
-  },
-  {
-    "title": "Collections",
-    "slides": {
-    },
-    "examples": {
-    }
-  },
-  {
     "title": "A new programming language (maybe?) TBD O.o",
     "slides": {
     },
     "examples": {
+      "python": "/code_snippets/python/examples.py",
+      "html": "/code_snippets/javascript/index.html",
+      "javascript": "/code_snippets/javascript/main.js"
+    }
+  },
+  {
+    "title": "Review for final",
+    "date": "July 27",
+    "slides": {
+    },
+    "examples": {
+      "example": "/code_snippets/CS0007_Exam_02.pdf"
     }
   },
   {
