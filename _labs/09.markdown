@@ -134,6 +134,12 @@ Output:
 9,false,false,false,true,false,false,false,,,,,,,,,,,,,,,,,,,,,,16
 10,false,false,false,false,false,false,false,,,,,,,,,,,,,,,,Thrór,Bofur,Kili,,,,16
 11,false,false,false,false,true,false,false,,,,,,,,,,,,,,,,,,,Azaghâl,Balin,Dís,18
+12,false,false,false,false,false,true,true,,,,,,,,,,,,,,,,,,,,,,22
+13,false,false,false,false,false,false,false,,,,,,,,,,,,,,,,Durin,Gimli,Náin,,,,22
+14,false,false,false,false,false,false,false,,,,,,,,,,,,,,,,,,,,,,22
+15,false,false,false,false,false,true,false,,,,,,,,,,,,,,,,Azaghâl,Balin,Dís,,,,25
+16,false,false,false,false,false,false,false,,,,,,,,,,,,,,,,,,,,,,25
+17,false,false,false,false,false,true,false,,,,,,,,,,,,,,,,,,,,,,28
 ```
 
 
@@ -163,6 +169,13 @@ Output:
 9,false,,,4
 10,true,,,6
 11,false,,,6
+12,false,Bofur,Kili,6
+13,false,,,6
+14,true,,,8
+15,false,,,8
+16,false,Bofur,Kili,8
+17,false,,,8
+18,true,,,9
 ```
 
 
@@ -195,6 +208,24 @@ Output:
 9,false,false,false,false,,,Fili,,4
 10,true,true,false,false,,,,,6
 11,false,false,true,false,,,,,7
+12,false,false,false,false,Bofur,Kili,,,7
+13,false,false,false,false,,,Fili,,7
+14,false,false,false,false,,,,,7
+15,false,true,true,false,,,,,9
+16,false,false,false,false,,,,,9
+17,true,false,false,false,,Kili,Fili,,10
+18,false,false,false,false,,,,,10
+19,false,false,true,false,,,Bofur,,11
+20,false,true,false,false,,,,,12
+21,false,false,true,false,,,Fili,,13
+22,false,false,false,false,,,,Kili,13
+23,false,false,true,true,,,Bofur,,15
+24,false,false,false,false,,,,,15
+25,false,false,true,false,,,Kili,,16
+26,false,false,false,false,,,,,16
+27,false,false,true,false,,,Bofur,,17
+28,false,false,false,false,,,,,17
+29,false,false,true,false,,,,,18
 ```
 
 
